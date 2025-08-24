@@ -1,11 +1,11 @@
 ﻿**
-# Climate-resilient & Low-carbon Unfolding Economic Scenarios – An Agent-Based Model
+# CLUES ABM Model
 
 **
 
 # 1. Overview
 
-The **Climate-resilient & Low-carbon Unfolding Economic Scenarios – An Agent-Based Model** (CLUES-ABM) simulates the adaptation (climate-resilient) and mitigation (low-carbon) of global environmental changes. The model unfolds economic system changes over time, allowing high-temporal and spatial resolution simulations for short and medium-term periods. It couples global environmental changes with China's socio-economic system at a high spatial-temporal precision, simulating the diffusion of environmental risks, natural disasters, and policy changes. This model helps to assess economic impacts more accurately, identify risk nodes, and design adaptive policies.
+The CLUES ABM model (Climate-resilient & Low-carbon Unfolding Economic Scenarios – An Agent-Based Model) simulates the short-term impact of abrupt external shocks on an equilibrium economic–environmental system, containing the process of adaptation and mitigation of agents within the system. The model unfolds economic and environmental system changes over time, allowing high-temporal and spatial resolution simulations for short and medium-term periods. It couples global environmental changes with China's socio-economic system at a high spatial-temporal precision, simulating the diffusion of environmental risks, natural disasters, and policy changes. This model helps to assess economic and environmental impacts more accurately, identify risk nodes, and design adaptive policies.
 
 Figure 1 illustrates the simulation process of the CLUES-ABM model. Within a predefined world (such as China or globally), based on the supply-demand in the industrial chain, production agents and production/consumption agents transfer information or material via transportation agents. The transmission of material and information flows is determined by the initial world and the adaptive behavior of various agents, spreading and diffusing through the supply chain network.
 ![CLUES-ABM model schematic diagram](https://i-blog.csdnimg.cn/direct/76f743b097f04ca3b764e26f00b6c936.gif#pic_center)
@@ -213,7 +213,7 @@ $$
 X^{a} = \min\{O^{tot}, X^{cap}, \min\{X^{s'}\}, \min\{X^{r', s'}\}\} \quad (1)
 $$
 
-where X^(a) is the actual production; O^(tot) denotes the total order; X^(cap) is production capacity; X^(s^(′)) is the production constraint due to the inventory of intermediate product s^(′) (if s^(′) is a homogeneous product such as rice), and X^(r^(′), s^(′)) is the production constraint due to the inventory of intermediate product s^(′) from region r^(′) (if s^(′) is specific such as a particular type of machine component). Note that if an intermediate product s^(′) is specific, the products s^(′) from different regions are assumed to be different. These limitation variables are defined in equations (2) to (5) below, respectively.
+where X^(a) is the actual production; O^(tot) denotes the total order; X^(cap) is production capacity; X^(s') is the production constraint due to the inventory of intermediate product s' (if s' is a homogeneous product such as rice), and X^(r', s') is the production constraint due to the inventory of intermediate product s' from region r' (if s' is specific such as a particular type of machine component). Note that if an intermediate product s' is specific, the products s' from different regions are assumed to be different. These limitation variables are defined in equations (2) to (5) below, respectively.
 
 **Total order.** The total order received by this production agent is
 
@@ -234,38 +234,56 @@ where α is overproduction capacity (the value is 1 by default); θ is the reduc
 **Production constraint.** The production constraint due to the inventory of intermediate product is
 
 $$
-\left\{ \begin{matrix} I^{\text{R}}\left( s^{'} \right) = n\left( s^{'} \right) \times X_{t - 1}^{a} \times a\left( s^{'} \right) \\ X^{s^{'}} = \frac{I\left( s^{'} \right)}{a\left( s^{'} \right)} \times \min\left\{ 1,\frac{I\left( s^{'} \right)}{\psi I^{R}\left( s^{'} \right)} \right\} \end{matrix} \right. \quad \text{if } s^{'} \text{ is a homogeneous product} \quad (4)
+\begin{cases}
+I^{\text{R}}(s') = n(s') \times X_{t - 1}^{a} \times a(s') \\
+X^{s'} = \dfrac{I(s')}{a(s')} \times \min\{\,1,\dfrac{I(s')}{\psi\, I^{\text{R}}(s')}\,\}
+\end{cases}
+\quad \text{if } s' \text{ is a homogeneous product} \quad (4)
 $$
 
 $$
-\left\{ \begin{matrix} I^{R}\left( {r^{'},\ s}^{'} \right) = n\left( s^{'} \right) \times X_{t - 1}^{a} \times a\left( {r^{'},\ s}^{'} \right) \\ X^{{r^{'},\ s}^{'}} = \frac{I\left( {r^{'},\ s}^{'} \right)}{a\left( {r^{'},\ s}^{'} \right)} \times \min\left\{ 1,\frac{I\left( {r^{'},\ s}^{'} \right)}{\Psi I^{R}\left( {r^{'},\ s}^{'} \right)} \right\} \end{matrix} \right. \quad \text{if } s^{'} \text{ is a specific product} \quad (5)
+\begin{cases}
+I^{R}(r', s') = n(s') \times X_{t - 1}^{a} \times a(r', s') \\
+X^{\,{r', s'}} = \dfrac{I(r', s')}{a(r', s')} \times \min\{\,1,\dfrac{I(r', s')}{\Psi\, I^{R}(r', s')}\,\}
+\end{cases}
+\quad \text{if } s' \text{ is a specific product} \quad (5)
 $$
 
-where I^(R) is the required inventory level, n is the target usage days for different products; X^(a) is the actual production; a is the input requirement of raw materials for unitary production; X^(s^(′)) or X^(r^(′), s^(′)) is possible production levels constrained by inventories of different products; I is the current inventory level; Ψ is the ratio of the required inventory level below which the production agent would use only part of the inventory in order to smooth production between simulation steps (the value of Ψ is 0 by default).
+where I^(R) is the required inventory level, n is the target usage days for different products; X^(a) is the actual production; a is the input requirement of raw materials for unitary production; X^(s') or X^(r', s') is possible production levels constrained by inventories of different products; I is the current inventory level; Ψ is the ratio of the required inventory level below which the production agent would use only part of the inventory in order to smooth production between simulation steps (the value of Ψ is 0 by default).
 
 ### 2) Sending out products onto transportation chains to other agents
 
 The distribution of products is based on received orders and observed patterns of product distribution. When the actual production is equal to the total order, products are allocated according to the orders as described in equation (6). When the actual production is less than the total order, products are allocated according to the share of various orders as described in equation (7).
 
 $$
-\left\{ \begin{matrix} Z^{\rightarrow \langle P \rangle}\left( {r^{'},\ s}^{'} \right) = O^{\leftarrow \langle P \rangle}\left( {r^{'},\ s}^{'} \right) \\ Z^{\rightarrow \langle C \rangle}\left( r^{'} \right) = O^{\leftarrow \langle C \rangle}\left( r^{'} \right) \\ Z^{\rightarrow E} = O^{E} \end{matrix} \right. \quad \text{if } X^{a} = O^{tot} \quad (6)
+\begin{cases}
+Z^{\rightarrow \langle P \rangle}(r', s') = O^{\leftarrow \langle P \rangle}(r', s') \\
+Z^{\rightarrow \langle C \rangle}(r') = O^{\leftarrow \langle C \rangle}(r') \\
+Z^{\rightarrow E} = O^{E}
+\end{cases}
+\quad \text{if } X^{a} = O^{tot} \quad (6)
 $$
 
 $$
-\left\{ \begin{matrix} Z^{\rightarrow \langle P \rangle}\left( {r^{'},\ s}^{'} \right) = X^{a} \times \frac{O^{\leftarrow \langle P \rangle}\left( {r^{'},\ s}^{'} \right)}{O^{tot}} \\ Z^{\rightarrow \langle C \rangle}\left( r^{'} \right) = X^{a} \times \frac{O^{\leftarrow \langle C \rangle}\left( r^{'} \right)}{O^{tot}} \\ Z^{\rightarrow E} = X^{a} \times \frac{O^{E}}{O^{tot}} \end{matrix} \right. \quad \text{if } X^{a} < O^{tot} \quad (7)
+\begin{cases}
+Z^{\rightarrow \langle P \rangle}(r', s') = X^{a} \times \dfrac{O^{\leftarrow \langle P \rangle}(r', s')}{O^{tot}} \\
+Z^{\rightarrow \langle C \rangle}(r') = X^{a} \times \dfrac{O^{\leftarrow \langle C \rangle}(r')}{O^{tot}} \\
+Z^{\rightarrow E} = X^{a} \times \dfrac{O^{E}}{O^{tot}}
+\end{cases}
+\quad \text{if } X^{a} < O^{tot} \quad (7)
 $$
 
 where Z^(→⟨P⟩), Z^(→⟨C⟩), and Z^(→E) denote products sent toward different production agents, consumption agents, and export (which is only for the open economy).
 
 ### 3) Sending orders to replenish intermediate product inventories
 
-The evolution of inventory of an intermediate product s^(′) is
+The evolution of inventory of an intermediate product s' is
 
 $$
 I_{t}(s') = I_{t-1}(s') - X_{t-1}^{a} \times a_{t-1}(s') + \sum Z^{\leftarrow \langle P \rangle}(r', s') \quad (8)
 $$
 
-where I_(t)(s^(′)) is the inventory of s^(′) for the production agent in period t; I_(t-1)(s^(′)) is the inventory of s^(′) for the production agent in period t-1; X_(t-1)^(a) is the actual production in t-1; a_(t-1)(s^(′)) is the input requirement of s^(′) for unit production in t-1; Z^(←⟨P⟩) denotes the product inflows from production agents in different regions.
+where I_(t)(s') is the inventory of s' for the production agent in period t; I_(t-1)(s') is the inventory of s' for the production agent in period t-1; X_(t-1)^(a) is the actual production in t-1; a_(t-1)(s') is the input requirement of s' for unit production in t-1; Z^(←⟨P⟩) denotes the product inflows from production agents in different regions.
 
 When the target inventory, defined in equation (9), is greater than the current inventory, the agent will increase the order so that the inventory level would gradually grow to the target level, as in equation (10).
 
@@ -274,42 +292,47 @@ I^{T}(s') = n(s') \times \min\{O^{tot},X^{cap}\} \times a(s') \quad (9)
 $$
 
 $$
-O^{\rightarrow \langle P \rangle}(s') = a(s') \times X^{a} + ( I^{T}(s') - I(s') ) \times \frac{\Delta t}{\tau_{I}} \quad (10)
+O^{\rightarrow \langle P \rangle}(s') = a(s') \times X^{a} + \bigl( I^{T}(s') - I(s') \bigr) \times \frac{\Delta t}{\tau_{I}} \quad (10)
 $$
 
-where I^(T)(s^(′)) is the target inventory; O^(→⟨P⟩) is orders sent toward different production agents; Δt is the time length of each simulation step (e.g., one day); τ_(I) is the timescale for adjusting to targeted inventory levels.
+where I^(T)(s') is the target inventory; O^(→⟨P⟩) is orders sent toward different production agents; Δt is the time length of each simulation step (e.g., one day); τ_(I) is the timescale for adjusting to targeted inventory levels.
 
 ### 4) Adjusting upstream suppliers to alleviate the shortage of intermediate products
 
-The order shares of a homogeneous intermediate product s^(′) given to connected suppliers in different regions can be adjusted in each period, according to the difference between the share of product s^(′) sent by a particular supplier in the total product s^(′) sent by all suppliers and the previous order share of this supplier. Intuitively, if a supplier provided fewer raw materials than the order given to it in the previous period, the order share given to it in this period will decrease.
+The order shares of a homogeneous intermediate product s' given to connected suppliers in different regions can be adjusted in each period, according to the difference between the share of product s' sent by a particular supplier in the total product s' sent by all suppliers and the previous order share of this supplier. Intuitively, if a supplier provided fewer raw materials than the order given to it in the previous period, the order share given to it in this period will decrease.
 
 $$
 o_{t}^{\rightarrow \langle P \rangle}(r',s') = o_{t - 1}^{\rightarrow \langle P \rangle}(r',s') + \left( \frac{Z^{\rightarrow \langle P \rangle}(r,s|\langle P \rangle(r',s'))}{\sum_{r'}{Z^{\rightarrow \langle P \rangle}(r,s|\langle P \rangle(r',s'))}} - \frac{O_{t - 1}^{\rightarrow \langle P \rangle}(r',s')}{O_{t - 1}^{\rightarrow \langle P \rangle}(s')} \right) \times \frac{\Delta t}{\tau_{O}} \quad (11)
 $$
 
-where Z^(→⟨P⟩)(r,s|⟨P⟩(r^(′),s^(′))) denotes the product sent (toward the production agent ⟨P⟩(r,s) in consideration) by production agent ⟨P⟩(r^(′),s^(′)); o_(t)^(→⟨P⟩)(r^(′),s^(′)) denotes the share of order for intermediate product s^(′) sent toward the supplier in region r^(′) in the current time period t; τ_(O) denotes the timescale for adjusting to the target order distribution.
+where Z^(→⟨P⟩)(r,s|⟨P⟩(r',s')) denotes the product sent (toward the production agent ⟨P⟩(r,s) in consideration) by production agent ⟨P⟩(r',s'); o_(t)^(→⟨P⟩)(r',s') denotes the share of order for intermediate product s' sent toward the supplier in region r' in the current time period t; τ_(O) denotes the timescale for adjusting to the target order distribution.
 
-Therefore, the order to the supplier in the region r^(′) is
+Therefore, the order to the supplier in the region r' is
 
 $$
 O^{\rightarrow \langle P \rangle}(r',s') = O^{\rightarrow \langle P \rangle}(s') \times o^{\rightarrow \langle P \rangle}(r',s') \quad (12)
 $$
 
-where O^(→⟨P⟩)(s^(′)) is the total order for the intermediate product s^(′) determined in equation (10).
+where O^(→⟨P⟩)(s') is the total order for the intermediate product s' determined in equation (10).
 
 #### 5) Using overproduction capacity to ensure product supply
 
 If the actual production level is smaller than the total order received, i.e., X^(a) < O^(tot), there is a scarcity. In this case, the production agent will gradually utilize idle production capacities (i.e., overproduction capacity) to increase supply. If X^(a) = O^(tot), there is no scarcity. The production agent will gradually reduce the overproduction capacity parameter α toward 1.
 
 $$
-\alpha_{t + 1} = \left\{ \begin{matrix} \alpha_{t} + ( \alpha^{\max} - \alpha_{t} ) \times \frac{O^{tot} - X^{a}}{O^{tot}} \times \frac{\Delta t}{\tau_{\alpha}} & \text{if } X^{a} < O^{tot} \\ \alpha_{t} - ( \alpha_{t} - 1 ) \times \frac{\Delta t}{\tau_{\alpha}} & \text{if } X^{a} = O^{tot} \end{matrix} \right. \quad (13)
+\alpha_{t + 1} =
+\begin{cases}
+\alpha_{t} + ( \alpha^{\max} - \alpha_{t} ) \times \dfrac{O^{tot} - X^{a}}{O^{tot}} \times \dfrac{\Delta t}{\tau_{\alpha}} & \text{if } X^{a} < O^{tot} \\
+\alpha_{t} - ( \alpha_{t} - 1 ) \times \dfrac{\Delta t}{\tau_{\alpha}} & \text{if } X^{a} = O^{tot}
+\end{cases}
+\quad (13)
 $$
 
 where α^(max) denotes the maximum possible overproduction capacity (with the default value of 1.2); τ_(α) is the timescale for adjusting to maximum production capacity.
 
 #### 6) Adjusting production technology to meet the shortage of intermediate products
 
-**Case of scarcity.** Faced with a shortage of an intermediate product, the production agent will gradually reduce the requirement for it to a certain degree. For the intermediate product s^(′), if equation (14) is satisfied, the production agent detects a shortage. Thus, the production agent sees a shortage if the total amount of s^(′) sent by all the connected suppliers falls short of the previous total order. In this case, it will update intermediate requirements for unitary production (i.e., adjusting production technology) as described in equation (15).
+**Case of scarcity.** Faced with a shortage of an intermediate product, the production agent will gradually reduce the requirement for it to a certain degree. For the intermediate product s', if equation (14) is satisfied, the production agent detects a shortage. Thus, the production agent sees a shortage if the total amount of s' sent by all the connected suppliers falls short of the previous total order. In this case, it will update intermediate requirements for unitary production (i.e., adjusting production technology) as described in equation (15).
 
 $$
 O_{t-1}^{\rightarrow \langle P \rangle}(s') > Z^{\rightarrow \langle P \rangle}(r,s|\langle P \rangle(s')) \quad (14)
@@ -319,24 +342,24 @@ $$
 a_{t}(s') = a_{t - 1}(s') - \frac{O_{t - 1}^{\rightarrow \langle P \rangle}(s') - Z^{\rightarrow \langle P \rangle}(r,s|\langle P \rangle(s'))}{O_{t - 1}^{\rightarrow \langle P \rangle}(s')} \times a_{t - 1}(s') \times \frac{\Delta t}{\tau_{A}^{\downarrow}} \quad (15)
 $$
 
-where Z^(→⟨P⟩)(r,s|⟨P⟩(s^(′))) denotes the product sent (toward the production agent ⟨P⟩(r,s) in consideration) by all connected suppliers and O_(t-1)^(→⟨P⟩)(s^(′)) is the total order for s^(′) sent in the previous simulation period; a_(t)(s^(′)) denotes the intermediate requirement of s^(′) for unitary production and τ_(A)^(↓) is the timescale parameter of this adjustment.
+where Z^(→⟨P⟩)(r,s|⟨P⟩(s')) denotes the product sent (toward the production agent ⟨P⟩(r,s) in consideration) by all connected suppliers and O_(t-1)^(→⟨P⟩)(s') is the total order for s' sent in the previous simulation period; a_(t)(s') denotes the intermediate requirement of s' for unitary production and τ_(A)^(↓) is the timescale parameter of this adjustment.
 
-**Case of no scarcity.** If equation (16) is satisfied, there is no scarcity of intermediate product s^(′). This means the total amount of s^(′) sent by all the connected suppliers satisfies the previous total order. Then the requirement of s^(′) for unitary production will shift back towards the original value in the steady state as described in equation (17).
+**Case of no scarcity.** If equation (16) is satisfied, there is no scarcity of intermediate product s'. This means the total amount of s' sent by all the connected suppliers satisfies the previous total order. Then the requirement of s' for unitary production will shift back towards the original value in the steady state as described in equation (17).
 
 $$
 O_{t-1}^{\rightarrow \langle P \rangle}(s') = Z^{\rightarrow \langle P \rangle}(r,s|\langle P \rangle(s')) \quad (16)
 $$
 
 $$
-a_{t}(s') = a_{t - 1}(s') + \frac{\overline{a}(s') - a_{t - 1}(s')}{\overline{a}(s')} \times ( \overline{a}(s') - a_{t - 1}(s') ) \times \frac{\Delta t}{\tau_{A}^{\uparrow}} \quad (17)
+a_{t}(s') = a_{t - 1}(s') + \frac{\overline{a}(s') - a_{t - 1}(s')}{\overline{a}(s')} \times \bigl( \overline{a}(s') - a_{t - 1}(s') \bigr) \times \frac{\Delta t}{\tau_{A}^{\uparrow}} \quad (17)
 $$
 
-where τ_(A)^(↑) is the timescale for this technology adaptation and $\overline{a}\left( s^{'} \right)$ is the input requirement for unitary production in a steady state.
+where τ_(A)^(↑) is the timescale for this technology adaptation and $\overline{a}(s')$ is the input requirement for unitary production in a steady state.
 
 If the modeled input-output system is open, agents may resort to foreign supplies, and the import requirement for unitary production is:
 
 $$
-i_{t} = i_{t - 1} + \sum_{s'=1}^{s}( a_{t - 1}(s') - a_{t}(s') ) \quad (18)
+i_{t} = i_{t - 1} + \sum_{s'=1}^{s}\bigl( a_{t - 1}(s') - a_{t}(s') \bigr) \quad (18)
 $$
 
 that is, the agent may use imported goods to compensate for the decreased/increased requirements for scarce intermediate inputs.
@@ -346,7 +369,7 @@ that is, the agent may use imported goods to compensate for the decreased/increa
 If the production agent suffers from an external shock resulting in the reduction of production capacity (with θ representing the ratio of loss), after the event, it will slowly restore the capacity through reconstruction until the θ becomes 0. Therefore, the production agent will gradually recover after an external shock (such as a disaster) and the speed is governed by the timescale parameter τ_(θ).
 
 $$
-\theta_{t + 1} = \left( 1 - \frac{\Delta t}{\tau_{\theta}} \right) \times \theta_{t} \quad (19)
+\theta_{t + 1} = \bigl( 1 - \frac{\Delta t}{\tau_{\theta}} \bigr) \times \theta_{t} \quad (19)
 $$
 
 where θ is the ratio of loss and τ_(θ) is the timescale for reconstruction.
@@ -359,25 +382,25 @@ The production agent stores the relevant state variables in the current simulati
 ### (2) Consumption agent
 
 
-***Consumption agent*** `⟨C⟩(r)` consumes products s^(′) = 1, 2, ⋯, S in each simulation period. To do this, it must send orders to different suppliers and adjust these orders according to the actual supply fluctuations. Specifically, the consumption agent acts in the following ways.
+***Consumption agent*** `⟨C⟩(r)` consumes products s' = 1, 2, ⋯, S in each simulation period. To do this, it must send orders to different suppliers and adjust these orders according to the actual supply fluctuations. Specifically, the consumption agent acts in the following ways.
 
 #### 1) Sending order outflows
 
-In a simulation period, the order shares (for a homogeneous product s^(′)) given to producers in different regions will be adjusted according to the difference between the share of product s^(′) sent by a particular supplier in the total product s^(′) sent by all suppliers and the previous order share of this supplier. Intuitively, if a supplier provided fewer products than the order given to it in the previous period, the order share given to it in this period will decrease.
+In a simulation period, the order shares (for a homogeneous product s') given to producers in different regions will be adjusted according to the difference between the share of product s' sent by a particular supplier in the total product s' sent by all suppliers and the previous order share of this supplier. Intuitively, if a supplier provided fewer products than the order given to it in the previous period, the order share given to it in this period will decrease.
 
 $$
 o_{t}^{\rightarrow \langle P \rangle}(r',s') = o_{t - 1}^{\rightarrow \langle P \rangle}(r',s') + \left( \frac{Z^{\rightarrow \langle C \rangle}(r,s|\langle P \rangle(r', s'))}{\sum_{r'}{Z^{\rightarrow \langle C \rangle}(r,s|\langle P \rangle(r', s'))}} - \frac{O_{t - 1}^{\rightarrow \langle P \rangle}(r', s')}{O_{t - 1}^{\rightarrow \langle P \rangle}(s')} \right) \times \frac{\Delta t}{\tau_{O}} \quad (20)
 $$
 
-where Z^(→⟨C⟩)(r,s|⟨P⟩(r^(′), s^(′))) denotes the product sent toward the consumption agent ⟨C⟩(r) in consideration by production agent ⟨P⟩(r^(′),s^(′));  o_(t)^(→⟨P⟩)(r^(′),s^(′)) denotes the share of order for product s^(′) sent toward the connected supplier in region r^(′) in the simulation period t; τ_(O) denotes the timescale for adjusting to the target order distribution.
+where Z^(→⟨C⟩)(r,s|⟨P⟩(r', s')) denotes the product sent toward the consumption agent ⟨C⟩(r) in consideration by production agent ⟨P⟩(r',s');  o_(t)^(→⟨P⟩)(r',s') denotes the share of order for product s' sent toward the connected supplier in region r' in the simulation period t; τ_(O) denotes the timescale for adjusting to the target order distribution.
 
-Therefore, the consumption agent sends orders to all connected suppliers for s^(′) in different regions:
+Therefore, the consumption agent sends orders to all connected suppliers for s' in different regions:
 
 $$
 O^{\rightarrow \langle P \rangle}(r', s')= O^{\rightarrow \langle P \rangle}(s') \times o^{\rightarrow \langle P \rangle}(r', s') \quad (21)
 $$
 
-where O^(→⟨P⟩)(s^(′)) is the total order for this homogeneous product s^(′), which is determined by the steady-state consumption level.
+where O^(→⟨P⟩)(s') is the total order for this homogeneous product s', which is determined by the steady-state consumption level.
 
 #### 2) Record key state variables
 
@@ -492,5 +515,6 @@ Z_{t + 1}( \cdot |\langle T \rangle^{\rightarrow \langle C \rangle}( r_{1},s_{1}
 $$
 
 Therefore, we have completed updating the transportation chain connecting the production agent `⟨P⟩(r₁,s₁)` and the consumption agent `⟨C⟩(r₂)`.
+
 
 
