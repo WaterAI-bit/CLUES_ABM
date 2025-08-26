@@ -421,7 +421,7 @@ $$
 
 ##### 2) Loading
 
-In the period of \(t+1\), the cargo is loaded to the transportation agent.
+In the period of $t+1$, the cargo is loaded to the transportation agent.
 
 $$
 \begin{aligned}
@@ -431,11 +431,11 @@ $$
 \end{aligned}
 $$
 
-where \(Z_{t}^{\rightarrow \langle P \rangle}(r_2,s_2 \mid \langle P \rangle(r_1,s_1))\) represents the cargo produced by `⟨P⟩(r₁,s₁)` and planned to be delivered to `⟨P⟩(r₂,s₂)` in \(t\).
+where $Z_{t}^{\rightarrow \langle P \rangle}(r_2,s_2 \mid \langle P \rangle(r_1,s_1))$ represents the cargo produced by `⟨P⟩(r₁,s₁)` and planned to be delivered to `⟨P⟩(r₂,s₂)` in $t$.
 
 ##### 3) Blockage (optional, not in this study)
 
-If this transportation agent `⟨T⟩^(→⟨P⟩)(r₁,s₁,r₂,s₂)` has \(b\) units of goods \(s_1\) blocked at step \(l\) (\(l=1,2,\ldots,L\)), then unit \(b\) of goods \(s_1\) on step \(l\) cannot be transported forward as modeled in equation (23) due to this blockage. If \(b>0\), the transportation chain is blocked; if \(b=0\), the transportation chain is not blocked. Therefore, we must adjust the flows from step \(l\) to \(l+1\) in the transportation chain:
+If this transportation agent `⟨T⟩^(→⟨P⟩)(r₁,s₁,r₂,s₂)` has $b$ units of goods $s_1$ blocked at step $l$ ($l=1,2,\ldots,L$), then unit $b$ of goods $s_1$ on step $l$ cannot be transported forward as modeled in equation (23) due to this blockage. If $b>0$, the transportation chain is blocked; if $b=0$, the transportation chain is not blocked. Therefore, we must adjust the flows from step $l$ to $l+1$ in the transportation chain:
 
 $$
 \begin{aligned}
@@ -447,7 +447,7 @@ $$
 
 ##### 4) Unloading
 
-The cargo in the last step \(L+1\) of transportation chain is unloaded to `⟨P⟩(r₂,s₂)` in simulation period \(t\):
+The cargo in the last step $L+1$ of transportation chain is unloaded to `⟨P⟩(r₂,s₂)` in simulation period $t$:
 
 $$
 Z_{t}^{\leftarrow \langle P \rangle}( r_{1}, s_{1} \mid \langle P \rangle( r_{2}, s_{2} ) ) = \widetilde{\widetilde{Z}}_{L+1,t+1} \quad (25)
@@ -455,7 +455,7 @@ $$
 
 ##### 5) Updating
 
-After unloading the cargo in previous step, the cargo at each step of the transportation agent in \(t+1\) is:
+After unloading the cargo in previous step, the cargo at each step of the transportation agent in $t+1$ is:
 
 $$
 Z_{t+1}(\cdot \mid \langle T \rangle^{\rightarrow \langle P \rangle}( r_{1}, s_{1}, r_{2}, s_{2} ) )
@@ -470,7 +470,7 @@ Therefore, we have completed updating the transportation chain connecting the tw
 
 ##### 1) Transportation agent between production agent and consumption agents
 
-`⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)` delivers the cargo produced by the production agent in `⟨P⟩(r₁,s₁)` to the consumption agent in `⟨C⟩(r₂)`. The length of the transportation agent is \(L\), and the cargo at each step of the transportation agent in \(t\) is:
+`⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)` delivers the cargo produced by the production agent in `⟨P⟩(r₁,s₁)` to the consumption agent in `⟨C⟩(r₂)`. The length of the transportation agent is $L$, and the cargo at each step of the transportation agent in $t$ is:
 
 $$
 Z_{t}(\cdot \mid \langle T \rangle^{\rightarrow \langle C \rangle}(r_1,s_1,r_2)) \equiv (Z_{1,t}, Z_{2,t}, \cdots, Z_{L,t}) \quad (27)
@@ -478,7 +478,7 @@ $$
 
 ##### 2) Loading
 
-In the period of \(t+1\), the cargo is loaded to the transportation agent.
+In the period of $t+1$, the cargo is loaded to the transportation agent.
 
 $$
 \begin{aligned}
@@ -488,11 +488,11 @@ $$
 \end{aligned}
 $$
 
-where \(Z_{t}^{\rightarrow \langle C \rangle}(r_2 \mid \langle P \rangle(r_1,s_1))\) represents the cargo produced by production agent `⟨P⟩(r₁,s₁)` and planned to be delivered to consumption agent `⟨C⟩(r₂)` in \(t\).
+where $Z_{t}^{\rightarrow \langle C \rangle}(r_2 \mid \langle P \rangle(r_1,s_1))$ represents the cargo produced by production agent `⟨P⟩(r₁,s₁)` and planned to be delivered to consumption agent `⟨C⟩(r₂)` in $t$.
 
 ##### 3) Blockage (Optional, not in this study)
 
-If this transportation agent `⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)` has \(b\) units of goods \(s_1\) blocked at step \(l\) (\(l=1, 2, \ldots, L\)), then unit \(b\) of goods \(s_1\) on step \(l\) cannot be transported forward. If \(b>0\), the transportation chain is blocked; if \(b=0\), the transportation chain is not blocked. Similar to the previous case, the relevant production flows must be adjusted:
+If this transportation agent `⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)` has $b$ units of goods $s_1$ blocked at step $l$ ($l=1, 2, \ldots, L$), then unit $b$ of goods $s_1$ on step $l$ cannot be transported forward. If $b>0$, the transportation chain is blocked; if $b=0$, the transportation chain is not blocked. Similar to the previous case, the relevant production flows must be adjusted:
 
 $$
 \begin{aligned}
@@ -504,7 +504,7 @@ $$
 
 ##### 4) Unloading
 
-The cargo on the last step \(L+1\) of the transportation chain is unloaded to the target consumption agent `⟨C⟩(r₂)` in simulation period \(t\):
+The cargo on the last step $L+1$ of the transportation chain is unloaded to the target consumption agent `⟨C⟩(r₂)` in simulation period $t$:
 
 $$
 Z_{t}^{\leftarrow \langle P \rangle}( r_{1}, s_{1} \mid \langle C \rangle( r_{2} ) ) = \widetilde{\widetilde{Z}}_{L+1,t+1} \quad (30)
@@ -512,7 +512,7 @@ $$
 
 ##### 5) Updating
 
-After unloading the cargo in the previous step, the cargo at each step of the transportation chain in \(t+1\) is:
+After unloading the cargo in the previous step, the cargo at each step of the transportation chain in $t+1$ is:
 
 $$
 Z_{t+1}( \cdot \mid \langle T \rangle^{\rightarrow \langle C \rangle}( r_{1}, s_{1}, r_{2} ) )
@@ -520,6 +520,5 @@ Z_{t+1}( \cdot \mid \langle T \rangle^{\rightarrow \langle C \rangle}( r_{1}, s_
 $$
 
 Therefore, we have completed updating the transportation chain connecting the production agent `⟨P⟩(r₁,s₁)` and the consumption agent `⟨C⟩(r₂)`.
-
 
 
