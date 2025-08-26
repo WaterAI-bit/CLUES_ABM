@@ -1,7 +1,7 @@
-﻿**
+﻿
 # CLUES ABM Model
 
-**
+
 
 # 1. Overview
 
@@ -12,29 +12,29 @@ Figure 1 illustrates the simulation process of the CLUES-ABM model. Within a pre
 **To be supplemented: 1 link points to the second library**
 
 # 2. Function Introduction
-The platform constructs an economic system model that can finely characterize the coupling relationship between global environmental change and China's socio-economic system based on the interacting adaptive subjects in the industrial network. Through the integration of multi-source data, subject behavior rules and parallel computing technology，The platform is able to simulate the diffusion process of environmental risks, natural disasters, policy adjustments and other sudden events** in the economic system at a **high spatial and temporal resolution**, and to identify risk nodes and key transmission paths. Compared with traditional models, the platform can better reflect the real adaptive behavior and complexity characteristics of economic agents, thus providing a scientific basis for policy formulation.
+The platform constructs an economic system model based on the interacting adaptive subjects in the industrial network. Through the integration of multi-source data, subject behavior rules and parallel computing technology，The platform is able to simulate the diffusion process of environmental risks, natural disasters, policy adjustments and other sudden events** in the economic system at a **high spatial and temporal resolution**, and to identify risk nodes and key transmission paths. Compared with traditional models, the platform can better reflect the real adaptive behavior and complexity characteristics of economic agents, thus providing a scientific basis for policy formulation.
 
 
 **Application**：
 
-(1) **Climate Change and Disaster Response** - Forecasting the impact of typhoons, floods, droughts and other disasters on the industrial chain and regional economy, and assessing the effects of emergency dispatch and recovery programs.
-(2) **Green Transformation and Emission Reduction Policy Evaluation** - simulate the impact of carbon tax, emission trading and other policies on industrial structure and enterprise adaptation behavior, and optimize the green transformation path.
-(3) **Public Health and Emergency Management** - analyze the dynamic impacts of epidemics and other public emergencies on production, logistics, and trade, and formulate collaborative response strategies.
-(4) **Macroeconomic Risk Early Warning** - Construct a "sensing system" for environmental and economic risks to support risk prevention, resilience enhancement and cross-sectoral collaborative governance.
+(1) **Climate Change and Disaster Response** - Forecasting the impact of typhoons, floods, droughts and other disasters on the industrial chain and regional economy, and assessing the effects of emergency dispatch and recovery programs.<br>
+(2) **Green Transformation and Emission Reduction Policy Evaluation** - simulate the impact of carbon tax, emission trading and other policies on industrial structure and enterprise adaptation behavior, and optimize the green transformation path.<br>
+(3) **Public Health and Emergency Management** - analyze the dynamic impacts of epidemics and other public emergencies on production, logistics, and trade, and formulate collaborative response strategies.<br>
+(4) **Macroeconomic Risk Early Warning** - Construct a "sensing system" for environmental and economic risks to support risk prevention, resilience enhancement and cross-sectoral collaborative governance.<br>
 
 The platform can be used as an important tool for scientific research, governmental decision-making and corporate strategic analysis, and provides support for enhancing the adaptability and sustainability of China's socio-economic systems in the face of environmental change.
 
-**Publications**
-1，Qi Zhou, Shen Qu, Miaomiao Liu, Jianxun Yang, Jia Zhou, Yunlei She, Zhouyi Liu, Jun Bi, Enhancing the Efficiency of Enterprise Shutdowns for Environmental Protection: An Agent-Based Modeling Approach with High Spatial–Temporal Resolution Data, *Engineering*, **https://doi.org/10.1016/j.eng.2024.02.006**
-2，Wen Wen, Yang Su, Ying-er Tang, Xingman Zhang, Yuchen Hu, Yawen Ben, Shen Qu, Evaluating carbon emissions reduction compliance based on 'dual control' policies of energy consumption and carbon emissions in China, *Journal of Environmental Management*, **https://doi.org/10.1016/j.jenvman.2024.121990**.
+**Publications**：<br>
+1，Qi Zhou, Shen Qu, Miaomiao Liu, Jianxun Yang, Jia Zhou, Yunlei She, Zhouyi Liu, Jun Bi, Enhancing the Efficiency of Enterprise Shutdowns for Environmental Protection: An Agent-Based Modeling Approach with High Spatial–Temporal Resolution Data, *Engineering*, **https://doi.org/10.1016/j.eng.2024.02.006**<br>
+2，Wen Wen, Yang Su, Ying-er Tang, Xingman Zhang, Yuchen Hu, Yawen Ben, Shen Qu, Evaluating carbon emissions reduction compliance based on 'dual control' policies of energy consumption and carbon emissions in China, *Journal of Environmental Management*, **https://doi.org/10.1016/j.jenvman.2024.121990**.<br>
 3，Qianzi Wang, Qi Zhou, Jin Lin, Sen Guo, Yunlei She, Shen Qu,
-Risk assessment of power outages to inter-regional supply chain networks in China, *Applied Energy*, **https://doi.org/10.1016/j.apenergy.2023.122100**.
-4，Liping Wang, Zhouyi Liu, Yunlei She, Yiyi Cao, Mimi Gong, Meng Wang, Shen Qu. Exploring the network structure of virtual water trade among China's cities. *Journal of Environmental Management* 2025, 388 , 125968. https://doi.org/10.1016/j.jenvman.2025.125968
-5，Y She, J Chen, Q Zhou, L Wang, K Duan, R Wang , Evaluating losses from water scarcity and benefits of water conservation measures to intercity supply chains in China，*Environmental science & technology*, 2024
+Risk assessment of power outages to inter-regional supply chain networks in China, *Applied Energy*, **https://doi.org/10.1016/j.apenergy.2023.122100**.<br>
+4，Liping Wang, Zhouyi Liu, Yunlei She, Yiyi Cao, Mimi Gong, Meng Wang, Shen Qu. Exploring the network structure of virtual water trade among China's cities. *Journal of Environmental Management* 2025, 388 , 125968. https://doi.org/10.1016/j.jenvman.2025.125968 <br>
+5，Y She, J Chen, Q Zhou, L Wang, K Duan, R Wang , Evaluating losses from water scarcity and benefits of water conservation measures to intercity supply chains in China，*Environmental science & technology*, 2024<br>
 6，Yiyi Cao, Yunlei She, Qianzi Wang, Jin Lin, Weiming Chen, Shen Qu, Zhouyi Liu,
-Redefining virtual water allocation in China based on economic welfare gains from environmental externalities, *Journal of Cleaner Production*, **https://doi.org/10.1016/j.jclepro.2023.140243**.
+Redefining virtual water allocation in China based on economic welfare gains from environmental externalities, *Journal of Cleaner Production*, **https://doi.org/10.1016/j.jclepro.2023.140243**.<br>
 7，Kun Zhang, Yiyi Cao, Zhouyi Liu, Qi Zhou, Shen Qu, Yi-Ming Wei,
-Allocation of carbon emission responsibility among Chinese cities guided by economic welfare gains: Case study based on multi-regional input-output analysis, Applied *Energy*, **https://doi.org/10.1016/j.apenergy.2024.124252.**
+Allocation of carbon emission responsibility among Chinese cities guided by economic welfare gains: Case study based on multi-regional input-output analysis, Applied *Energy*, **https://doi.org/10.1016/j.apenergy.2024.124252.**<br>
 ...
 
 # 3. Quick Start
@@ -65,36 +65,36 @@ cd CLUES_ABM
 ## 3.3 Model Background & Core Architecture
 CLUES ABM is a **Dynamic Complex Network Model** based on adaptive agents that simulates the evolution of multiregional economic systems under external shocks, and is particularly suitable for assessing supply chain impacts of climate change adaptation and mitigation.
 
- - Behavioral  network data
-&emsp; &emsp; Multi-regional input-output tables（eg. ```MRIOExample.json```）
-&emsp; &emsp; Enterprise Network Business Database
-&emsp; &emsp; Trade network data compiled by individuals
+ - **Behavioral  network data**<br>
+&emsp; &emsp; Multi-regional input-output tables（eg. ```MRIOExample.json```）<br>
+&emsp; &emsp; Enterprise Network Business Database<br>
+&emsp; &emsp; Trade network data compiled by individuals<br>
 
- - Subject type
- &emsp; &emsp; Production node (enterprise)
- &emsp; &emsp; Consumption node
- &emsp; &emsp; Transport node
+ - **Subject type**<br>
+ &emsp; &emsp; Production node (enterprise)<br>
+ &emsp; &emsp; Consumption node<br>
+ &emsp; &emsp; Transport node<br>
 
- - Adaptive behavior
-&emsp; &emsp; Overproduction Capacity
-&emsp; &emsp; Inventories
-&emsp; &emsp; Trade Adaptation
-&emsp; &emsp; Production Adaptation
-&emsp; &emsp; Reconstruction
- - Program structure
-&emsp; &emsp; object-oriented programming（OOP）
-&emsp; &emsp; core category：
-&emsp; &emsp; &emsp; &emsp;	World
-&emsp; &emsp; &emsp; &emsp;	AgentProduction
-&emsp; &emsp; &emsp; &emsp;	AgentConsumption
-&emsp; &emsp; &emsp; &emsp;	AgentTransportation
- - Simulation cycle (for example, 365 days a year)：
-&emsp; &emsp;Renewal of environmental and policy constraints
-&emsp; &emsp;Connecting subjects (establishing interactions)
-&emsp; &emsp;Main actions：
-&emsp; &emsp; &emsp; &emsp;Production body: production → preparing products → preparing orders → adaptation → memorization
-&emsp; &emsp; &emsp; &emsp;Consumption subjects: consumption → preparation of orders → memorization
-&emsp; &emsp;Go to next day
+ - **Adaptive behavior**<br>
+&emsp; &emsp; Overproduction Capacity<br>
+&emsp; &emsp; Inventories<br>
+&emsp; &emsp; Trade Adaptation<br>
+&emsp; &emsp; Production Adaptation<br>
+&emsp; &emsp; Reconstruction<br>
+ - **Program structure**<br>
+&emsp; &emsp; object-oriented programming（OOP）<br>
+&emsp; &emsp; core category：<br>
+&emsp; &emsp; &emsp; &emsp;	World<br>
+&emsp; &emsp; &emsp; &emsp;	AgentProduction<br>
+&emsp; &emsp; &emsp; &emsp;	AgentConsumption<br>
+&emsp; &emsp; &emsp; &emsp;	AgentTransportation<br>
+ - **Simulation cycle** (for example, 365 days a year)：<br>
+&emsp; &emsp;Renewal of environmental and policy constraints<br>
+&emsp; &emsp;Connecting subjects (establishing interactions)<br>
+&emsp; &emsp;Main actions：<br>
+&emsp; &emsp; &emsp; &emsp;Production body: production → preparing products → preparing orders → adaptation → memorization<br>
+&emsp; &emsp; &emsp; &emsp;Consumption subjects: consumption → preparation of orders → memorization<br>
+&emsp; &emsp;Go to next day<br>
 
 Understanding this structure helps to customize the configuration with scenario impact
 
@@ -112,43 +112,42 @@ Run in the project root directory：
 python "example 1 basic run.py"
 ```
 Script flow:
-
-(1) Load the data (e.g. ``cMRIOExample.json``)
-(2) Set simulation parameters (time step ```delta_t```, total days ```day_total```, target days ```ndays_target_default```)
-(3) Initialize subjects (production, consumption, transport)
-(4) Injecting scenario shocks (modifying ```AgentsP_Theta```to simulate capacity declines)
-(5) Advancing through the cycle (flow of goods → subject decisions → memory update)
-(6) Record results (value added changes, network flows, scarcity, etc.)
-(7) Plotting/saving (line graphs + ``.npz`` result files)
-
-
+<br>
+(1) Load the data (e.g. ``cMRIOExample.json``)<br>
+(2) Set simulation parameters (time step ```delta_t```, total days ```day_total```, target days ```ndays_target_default```)<br>
+(3) Initialize subjects (production, consumption, transport)<br>
+(4) Injecting scenario shocks (modifying ```AgentsP_Theta```to simulate capacity declines)<br>
+(5) Advancing through the cycle (flow of goods → subject decisions → memory update)<br>
+(6) Record results (value added changes, network flows, scarcity, etc.)<br>
+(7) Plotting/saving (line graphs + ``.npz`` result files)<br>
 
 
 
-After running: 
-&emsp; &emsp;A daily Gross Value Added line chart will pop up 
-&emsp; &emsp;Optionally, save the results to ```TestResults_ReductionInProductionCapacityExample.npz```.
 
+
+After running: <br>
+&emsp; &emsp;A daily Gross Value Added line chart will pop up <br>
+&emsp; &emsp;Optionally, save the results to ```TestResults_ReductionInProductionCapacityExample.npz```.<br>
 The browser will open an interactive interface that supports visual viewing of the simulation.
 
-## 3.6 Adjustable Configurations and Variables
+## 3.6 Adjustable Configurations and Variables<br>
 
-  • 	```MRIOExample.json```：Multi-regional input-output data（```MRIO_R```、```MRIO_S```、```MRIO_Z```、```MRIO_C```、```MRIO_VA```etc.）
-   •	Simulation step and duration： ```delta_t = 1/365```，```day_total = 365```，```ndays_target_default = 3```
-   •	Impact settings (modified directly within the example script)： 
-   •	Setting ``AgentsP_Theta`` for some production agents in a specified number of day intervals to simulate a drop in capacity
-   •	Transportation chain length/mapping:
-   •	Control of cargo flow propulsion and unloading positions through ``AgentsT_*`` with index ``k_NetPP / k_NetPC``.
-   •	Main output variables:
-&emsp; &emsp;Change in value added at regional/agent level
-&emsp; &emsp;Changes in cross-regional product flows
-&emsp; &emsp;Scarcity indicators
-&emsp; &emsp;Percentage loss of value added
+  • 	```MRIOExample.json```：Multi-regional input-output data（```MRIO_R```、```MRIO_S```、```MRIO_Z```、```MRIO_C```、```MRIO_VA```etc.）<br>
+   •	Simulation step and duration： ```delta_t = 1/365```，```day_total = 365```，```ndays_target_default = 3```<br>
+   •	Impact settings (modified directly within the example script)： <br>
+   •	Setting ``AgentsP_Theta`` for some production agents in a specified number of day intervals to simulate a drop in capacity<br>
+   •	Transportation chain length/mapping:<br>
+   •	Control of cargo flow propulsion and unloading positions through ``AgentsT_*`` with index ``k_NetPP / k_NetPC``.<br>
+   •	Main output variables:<br>
+&emsp; &emsp;Change in value added at regional/agent level<br>
+&emsp; &emsp;Changes in cross-regional product flows<br>
+&emsp; &emsp;Scarcity indicators<br>
+&emsp; &emsp;Percentage loss of value added<br>
 
 ## 3.7 Results Visualization
 
-   - Interactive mode: browser visualization
-   - Scripting mode: terminal output + pop-up charts + optional ``.npz`` data file
+   - Interactive mode: browser visualization<br>
+   - Scripting mode: terminal output + pop-up charts + optional ``.npz`` data file<br>
    
 
 
@@ -412,106 +411,112 @@ Transportation agent is the transportation chain connecting a pair of agents. Ea
 
 #### Transportation between production agents
 
-#### 1) Transportation chain between production agents
+##### 1) Transportation chain between production agents
 
 `⟨T⟩^(→⟨P⟩)(r₁,s₁,r₂,s₂)` delivers the cargo produced by the production agent in `⟨P⟩(r₁,s₁)` to the production agent in `⟨P⟩(r₂,s₂)`. The length of the transportation chain is L and the cargo at each step of the transportation chain in period t is
 
 $$
-Z_{t}(\cdot|\langle T \rangle^{\rightarrow \langle P \rangle}(r_1,s_1,r_2,s_2)) \equiv (Z_{1, t},Z_{2, t},\cdots,Z_{L, t}) \quad (22)
+Z_{t}(\cdot \mid \langle T \rangle^{\rightarrow \langle P \rangle}(r_1,s_1,r_2,s_2)) \equiv (Z_{1,t}, Z_{2,t}, \cdots, Z_{L,t}) \quad (22)
 $$
 
-#### 2) Loading
+##### 2) Loading
 
-In the period of t + 1, the cargo is loaded to the transportation agent.
-
-$$
-\begin{align*}
-\tilde{Z}_{t+1}(\cdot|\langle T \rangle^{\rightarrow \langle P \rangle}(r_1,s_1,r_2,s_2)) &= (Z_{t}^{\rightarrow \langle P \rangle}(r_2,s_2|\langle P \rangle(r_1,s_1)),Z_{1, t},Z_{2, t},\cdots,Z_{L, t}) \\
-&\equiv (\tilde{Z}_{1, t+1},\tilde{Z}_{2, t+1},\cdots,\tilde{Z}_{L+1, t+1}) \quad (23)
-\end{align*}
-$$
-
-where Z_(t)^(→⟨P⟩)(r₂,s₂|⟨P⟩(r₁,s₁)) represents the cargo produced by `⟨P⟩(r₁,s₁)` and planned to be delivered to `⟨P⟩(r₂,s₂)` in t.
-
-#### 3) Blockage (optional, not in this study)
-
-If this transportation agent `⟨T⟩^(→⟨P⟩)(r₁,s₁,r₂,s₂)` has b units of goods s₁ blocked at step l (l=1, 2, …, L), then unit b of goods s₁ on step l cannot be transported forward as modeled in equation (23) due to this blockage. If b > 0, the transportation chain is blocked; If b = 0, the transportation chain is not blocked. Therefore, we must adjust the flows from step l to l+1 in the transportation chain:
+In the period of \(t+1\), the cargo is loaded to the transportation agent.
 
 $$
-\begin{align*}
-\widetilde{\widetilde{Z}}_{t + 1} &= ( \tilde{Z}_{1,t + 1},\cdots,\tilde{Z}_{l,t + 1} + b,\tilde{Z}_{l + 1,t + 1} - b,\cdots,\tilde{Z}}_{L + 1,t + 1} ) \\
-&\equiv ( \widetilde{\widetilde{Z}}_{1,t + 1},\cdots,\widetilde{\widetilde{Z}}_{l,t + 1},\widetilde{\widetilde{Z}}_{l + 1,t + 1},\cdots,\widetilde{\widetilde{Z}}_{L + 1,t + 1} ) \quad (24)
-\end{align*}
+\begin{aligned}
+\tilde{Z}_{t+1}(\cdot \mid \langle T \rangle^{\rightarrow \langle P \rangle}(r_1,s_1,r_2,s_2))
+&= \bigl( Z_{t}^{\rightarrow \langle P \rangle}(r_2,s_2 \mid \langle P \rangle(r_1,s_1)),\, Z_{1,t}, Z_{2,t}, \cdots, Z_{L,t} \bigr) \\
+&\equiv \bigl( \tilde{Z}_{1,t+1}, \tilde{Z}_{2,t+1}, \cdots, \tilde{Z}_{L+1,t+1} \bigr) \quad (23)
+\end{aligned}
 $$
 
-#### 4) Unloading
+where \(Z_{t}^{\rightarrow \langle P \rangle}(r_2,s_2 \mid \langle P \rangle(r_1,s_1))\) represents the cargo produced by `⟨P⟩(r₁,s₁)` and planned to be delivered to `⟨P⟩(r₂,s₂)` in \(t\).
 
-The cargo in the last step L+1 of transportation chain is unloaded to `⟨P⟩(r₂,s₂)` in simulation period t:
+##### 3) Blockage (optional, not in this study)
 
-$$
-Z_{t}^{\leftarrow \langle P \rangle}( r_{1},s_{1}|\langle P \rangle( r_{2},s_{2} ) ) = \widetilde{\widetilde{Z}}_{L + 1,t + 1} \quad (25)
-$$
-
-where Z_(t)^(←⟨P⟩)(r₁,s₁|⟨P⟩(r₂,s₂)) represents cargo inflow to `⟨P⟩(r₂,s₂)` in t and the cargo was sent by (r₁,s₁) in a previous period (by putting it onto the transportation chain).
-
-#### 5) Updating
-
-After unloading the cargo in previous step, the cargo at each step of the transportation agent in t+1 is:
+If this transportation agent `⟨T⟩^(→⟨P⟩)(r₁,s₁,r₂,s₂)` has \(b\) units of goods \(s_1\) blocked at step \(l\) (\(l=1,2,\ldots,L\)), then unit \(b\) of goods \(s_1\) on step \(l\) cannot be transported forward as modeled in equation (23) due to this blockage. If \(b>0\), the transportation chain is blocked; if \(b=0\), the transportation chain is not blocked. Therefore, we must adjust the flows from step \(l\) to \(l+1\) in the transportation chain:
 
 $$
-Z_{t + 1}( \cdot |\langle T \rangle^{\rightarrow \langle P \rangle}( r_{1},s_{1},r_{2},s_{2} ) ) = ( \widetilde{\widetilde{Z}}_{1,t + 1},\cdots,\widetilde{\widetilde{Z}}_{L,t + 1} ) \quad (26)
+\begin{aligned}
+\widetilde{\widetilde{Z}}_{t+1}
+&= \bigl( \tilde{Z}_{1,t+1}, \ldots, \tilde{Z}_{l,t+1}+b,\, \tilde{Z}_{l+1,t+1}-b, \ldots, \tilde{Z}_{L+1,t+1} \bigr) \\
+&\equiv \bigl( \widetilde{\widetilde{Z}}_{1,t+1}, \ldots, \widetilde{\widetilde{Z}}_{l,t+1}, \widetilde{\widetilde{Z}}_{l+1,t+1}, \ldots, \widetilde{\widetilde{Z}}_{L+1,t+1} \bigr) \quad (24)
+\end{aligned}
+$$
+
+##### 4) Unloading
+
+The cargo in the last step \(L+1\) of transportation chain is unloaded to `⟨P⟩(r₂,s₂)` in simulation period \(t\):
+
+$$
+Z_{t}^{\leftarrow \langle P \rangle}( r_{1}, s_{1} \mid \langle P \rangle( r_{2}, s_{2} ) ) = \widetilde{\widetilde{Z}}_{L+1,t+1} \quad (25)
+$$
+
+##### 5) Updating
+
+After unloading the cargo in previous step, the cargo at each step of the transportation agent in \(t+1\) is:
+
+$$
+Z_{t+1}(\cdot \mid \langle T \rangle^{\rightarrow \langle P \rangle}( r_{1}, s_{1}, r_{2}, s_{2} ) )
+= \bigl( \widetilde{\widetilde{Z}}_{1,t+1}, \ldots, \widetilde{\widetilde{Z}}_{L,t+1} \bigr) \quad (26)
 $$
 
 Therefore, we have completed updating the transportation chain connecting the two production agents `⟨P⟩(r₁,s₁)` and `⟨P⟩(r₂,s₂)`.
 
+---
+
 #### Transportation between production agent and consumption agents
 
-#### 1) Transportation agent between production agent and consumption agents
+##### 1) Transportation agent between production agent and consumption agents
 
-`⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)` delivers the cargo produced by the production agent in `⟨P⟩(r₁,s₁)` to the consumption agent in `⟨C⟩(r₂)`. The length of the transportation agent is L, and the cargo at each step of the transportation agent in t is:
-
-$$
-Z_{t}(\cdot|\langle T \rangle^{\rightarrow \langle C \rangle}(r_1,s_1,r_2)) \equiv (Z_{1, t},Z_{2, t},\cdots,Z_{L, t}) \quad (27)
-$$
-
-#### 2) Loading
-
-In the period of t+1, the cargo is loaded to the transportation agent
+`⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)` delivers the cargo produced by the production agent in `⟨P⟩(r₁,s₁)` to the consumption agent in `⟨C⟩(r₂)`. The length of the transportation agent is \(L\), and the cargo at each step of the transportation agent in \(t\) is:
 
 $$
-\begin{align*}
-\tilde{Z}_{t+1}(\cdot|\langle T \rangle^{\rightarrow \langle C \rangle}(r_1,s_1,r_2)) &= (Z_{t}^{\rightarrow \langle C \rangle}(r_2|\langle P \rangle(r_1,s_1)),Z_{1, t},Z_{2, t},\cdots,Z_{L, t}) \\
-&\equiv (\tilde{Z}_{1, t+1},\tilde{Z}_{2, t+1},\cdots,\tilde{Z}_{L+1, t+1}) \quad (28)
-\end{align*}
+Z_{t}(\cdot \mid \langle T \rangle^{\rightarrow \langle C \rangle}(r_1,s_1,r_2)) \equiv (Z_{1,t}, Z_{2,t}, \cdots, Z_{L,t}) \quad (27)
 $$
 
-where Z_(t)^(→⟨C⟩)(r₂|⟨P⟩(r₁,s₁)) represents the cargo produced by production agent `⟨P⟩(r₁,s₁)` and planned to be delivered to consumption agent `⟨C⟩(r₂)` in t.
+##### 2) Loading
 
-#### 3) Blockage (Optional, not in this study)
-
-If this transportation agent `⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)` has b units of goods s₁ blocked at step l (l=1, 2, …, L), then unit b of goods s₁ on step l cannot be transported forward. If b > 0, the transportation chain is blocked; If b = 0, the transportation chain is not blocked. Similar to the previous case, the relevant production flows must be adjusted:
+In the period of \(t+1\), the cargo is loaded to the transportation agent.
 
 $$
-\begin{align*}
-\widetilde{\widetilde{Z}}_{t + 1} &= ( \tilde{Z}_{1,t + 1},\cdots,\tilde{Z}_{l,t + 1} + b,\tilde{Z}_{l + 1,t + 1} - b,\cdots,\tilde{Z}}_{L + 1,t + 1} ) \\
-&\equiv ( \widetilde{\widetilde{Z}}_{1,t + 1},\cdots,\widetilde{\widetilde{Z}}_{l,t + 1},\widetilde{\widetilde{Z}}_{l + 1,t + 1},\cdots,\widetilde{\widetilde{Z}}_{L + 1,t + 1} ) \quad (29)
-\end{align*}
+\begin{aligned}
+\tilde{Z}_{t+1}(\cdot \mid \langle T \rangle^{\rightarrow \langle C \rangle}(r_1,s_1,r_2))
+&= \bigl( Z_{t}^{\rightarrow \langle C \rangle}(r_2 \mid \langle P \rangle(r_1,s_1)),\, Z_{1,t}, Z_{2,t}, \cdots, Z_{L,t} \bigr) \\
+&\equiv \bigl( \tilde{Z}_{1,t+1}, \tilde{Z}_{2,t+1}, \cdots, \tilde{Z}_{L+1,t+1} \bigr) \quad (28)
+\end{aligned}
 $$
 
-#### 4) Unloading
+where \(Z_{t}^{\rightarrow \langle C \rangle}(r_2 \mid \langle P \rangle(r_1,s_1))\) represents the cargo produced by production agent `⟨P⟩(r₁,s₁)` and planned to be delivered to consumption agent `⟨C⟩(r₂)` in \(t\).
 
-The cargo on the last step L+1 of the transportation chain is unloaded to the target consumption agent `⟨C⟩(r₂)` in simulation period t:
+##### 3) Blockage (Optional, not in this study)
 
-$$
-Z_{t}^{\leftarrow \langle P \rangle}( r_{1},s_{1}|\langle C \rangle( r_{2} ) ) = \widetilde{\widetilde{Z}}_{L + 1,t + 1} \quad (30)
-$$
-
-#### 5) Updating
-
-After unloading the cargo in the previous step, the cargo at each step of the transportation chain in t+1 is:
+If this transportation agent `⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)` has \(b\) units of goods \(s_1\) blocked at step \(l\) (\(l=1, 2, \ldots, L\)), then unit \(b\) of goods \(s_1\) on step \(l\) cannot be transported forward. If \(b>0\), the transportation chain is blocked; if \(b=0\), the transportation chain is not blocked. Similar to the previous case, the relevant production flows must be adjusted:
 
 $$
-Z_{t + 1}( \cdot |\langle T \rangle^{\rightarrow \langle C \rangle}( r_{1},s_{1},r_{2} ) ) = ( \widetilde{\widetilde{Z}}_{1,t + 1},\cdots,\widetilde{\widetilde{Z}}_{L,t + 1} ) \quad (31)
+\begin{aligned}
+\widetilde{\widetilde{Z}}_{t+1}
+&= \bigl( \tilde{Z}_{1,t+1}, \ldots, \tilde{Z}_{l,t+1}+b,\, \tilde{Z}_{l+1,t+1}-b, \ldots, \tilde{Z}_{L+1,t+1} \bigr) \\
+&\equiv \bigl( \widetilde{\widetilde{Z}}_{1,t+1}, \ldots, \widetilde{\widetilde{Z}}_{l,t+1}, \widetilde{\widetilde{Z}}_{l+1,t+1}, \ldots, \widetilde{\widetilde{Z}}_{L+1,t+1} \bigr) \quad (29)
+\end{aligned}
+$$
+
+##### 4) Unloading
+
+The cargo on the last step \(L+1\) of the transportation chain is unloaded to the target consumption agent `⟨C⟩(r₂)` in simulation period \(t\):
+
+$$
+Z_{t}^{\leftarrow \langle P \rangle}( r_{1}, s_{1} \mid \langle C \rangle( r_{2} ) ) = \widetilde{\widetilde{Z}}_{L+1,t+1} \quad (30)
+$$
+
+##### 5) Updating
+
+After unloading the cargo in the previous step, the cargo at each step of the transportation chain in \(t+1\) is:
+
+$$
+Z_{t+1}( \cdot \mid \langle T \rangle^{\rightarrow \langle C \rangle}( r_{1}, s_{1}, r_{2} ) )
+= \bigl( \widetilde{\widetilde{Z}}_{1,t+1}, \cdots, \widetilde{\widetilde{Z}}_{L,t+1} \bigr) \quad (31)
 $$
 
 Therefore, we have completed updating the transportation chain connecting the production agent `⟨P⟩(r₁,s₁)` and the consumption agent `⟨C⟩(r₂)`.
