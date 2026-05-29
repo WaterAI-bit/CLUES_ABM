@@ -27,6 +27,7 @@ To install the foundational matrix and data data science dependencies, execute t
 pip install -r requirements.txt
 ```
 
+---
 
 ## 🚀 Execution & Pathway Decoupling
 
