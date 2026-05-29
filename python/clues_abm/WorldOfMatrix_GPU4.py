@@ -200,10 +200,10 @@ class WorldOfMatrixGPU:
         
         # ======== MRIO variables (which could be initialized automatically)========
         # Resource constraints IN EACH SIMULATION PERIOD, may or maynot needed to be provided externally.
-        self.WaterConstraints = None # MRIO_R*1 vector: Water constraints for each region in MRIO table.
+        self.ResourceConstraints = None # MRIO_R*1 vector: Water constraints for each region in MRIO table.
         # Conversion matrices for MRIO computations
         self.Regions_Matrix = None # MRIO_R*N_P matrix that converts rows of region-sectors to rows of regions
-        self.Regions_Matrix_WaterIntensity = None # MRIO_R*N_P matrix where each row contains the water intensities of the sectors in the corresponding region.
+        self.Regions_Matrix_ResourceIntensity = None # MRIO_R*N_P matrix where each row contains the water intensities of the sectors in the corresponding region.
 
     def initialize_variables(self): # Initialize Basic variables of the world.
 
@@ -280,8 +280,8 @@ class WorldOfMatrixGPU:
         self.MRIO_C[self.MRIO_C <= self.CutOff_NetPC] = 0
         # MRIO_R*N_P matrix that converts rows of region-sectors to rows of regions.
         self.Regions_Matrix = np.kron(np.eye(self.MRIO_R), np.ones((1, self.MRIO_S)))
-        # MRIO_R*N_P matrix where each row contains the water intensities of the sectors in the corresponding region.
-        self.Regions_Matrix_WaterIntensity = self.Regions_Matrix * self.AgentsP_ResourceIntensity.T
+        # MRIO_R*N_P matrix where each row contains the Resource intensities of the sectors in the corresponding region.
+        self.Regions_Matrix_ResourceIntensity = self.Regions_Matrix * self.AgentsP_ResourceIntensity.T
         # Number of aggregated products.
         self.Sa = self.S2Sa.shape[1]
 
@@ -393,7 +393,7 @@ class WorldOfMatrixGPU:
         self.AgentsP_PP2_OrderOutSa = self.AgentsP_OrderOutSa.copy()
 
         # Initiate resource constraints. Higher than normal use.
-        self.WaterConstraints = self.Regions_Matrix_WaterIntensity @ self.AgentsP_SS_Xcap + np.finfo(float).eps
+        self.ResourceConstraints = self.Regions_Matrix_ResourceIntensity @ self.AgentsP_SS_Xcap + np.finfo(float).eps
 
 
     def initialize_consumption_agents(self): # Initialize consumption agents.
@@ -557,8 +557,8 @@ class WorldOfMatrixGPU:
         # Update actual production levels using linear optimization.
         self.AgentsP_Xa = linprog(
             c=-np.ones(self.N_P),
-            A_ub=self.Regions_Matrix_WaterIntensity,
-            b_ub=self.WaterConstraints,
+            A_ub=self.Regions_Matrix_ResourceIntensity,
+            b_ub=self.ResourceConstraints,
             bounds=np.column_stack((lb, ub)),
             method='highs'
         ).x
