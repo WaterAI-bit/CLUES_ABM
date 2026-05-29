@@ -386,10 +386,6 @@ and the transportation agent from the production agent $`\langle P \rangle (r_1,
 the consumption agent $`\langle C \rangle(r_2)`$ is $` \langle T \rangle ^{\rightarrow \langle C \rangle}(r_1,s_1,r_2)`$, shipping the
 final product to consumers in region $`r_2`$.
 
-
-$`Z_{t}^{\rightarrow \langle C \rangle}(r_2 \mid \langle P \rangle(r_1,s_1))`$
-
-
 The specific behaviors and corresponding micro-foundations of the these
 agents including production agents, consumption agents, and
 transportation agents are detailed here. According to the
@@ -398,14 +394,14 @@ detail.
 
 ## 5.1 Production agent
 
-***Production agent*** `⟨P⟩(r,s)` carries out the production and sends
+***Production agent*** $`\langle P \rangle(r,s)`$ carries out the production and sends
 products and orders to other connected agents in the supply network in
 each simulation step. If external shocks (such as shortage of raw
 materials and/or loss of production capacity) occur, they can show
 certain adaptive behaviors, such as replenishing inventory, adjusting
 the order shares of upstream suppliers, using idle production capacity,
 adjusting production technology, post-disaster reconstruction, etc.
-Below we detail each type of behavior of this agent `⟨P⟩(r,s)` in one
+Below we detail each type of behavior of this agent $`\langle P \rangle(r,s)`$ in one
 simulation step (e.g., one day).
 
 ### 5.1.1 Producing goods using the Leontief production function
@@ -418,14 +414,14 @@ $$
 X^{a} = \min\{O^{tot}, X^{cap}, \min\{X^{s'}\}, \min\{X^{r', s'}\}\} \quad (1)
 $$
 
-where `X^(a)` is the actual production; O\^(tot) denotes the total
-order; `X^(cap)` is production capacity; `X^(s')` is the production
-constraint due to the inventory of intermediate product `s'` (if `s'` is
-a homogeneous product such as rice), and `X^(r', s')` is the production
-constraint due to the inventory of intermediate product `s'` from region
-`r'` (if `s'` is specific such as a particular type of machine
-component). Note that if an intermediate product `s'` is specific, the
-products `s'` from different regions are assumed to be different. These
+where $`X^{(a)}`$ is the actual production; O\^(tot) denotes the total
+order; $`X^{(cap)}`$ is production capacity; $`X^{(s')}`$ is the production
+constraint due to the inventory of intermediate product $`s'`$ (if $`s'`$ is
+a homogeneous product such as rice), and $`X^{(r', s')}`$ is the production
+constraint due to the inventory of intermediate product $`s'`$ from region
+$`r'`$ (if $`s'`$ is specific such as a particular type of machine
+component). Note that if an intermediate product $`s'`$ is specific, the
+products $`s'`$ from different regions are assumed to be different. These
 limitation variables are defined in equations (2) to (5) below,
 respectively.
 
@@ -435,8 +431,8 @@ $$
 O^{tot} = \sum O^{\leftarrow \langle P \rangle}(r',s') + \sum O^{\leftarrow \langle C \rangle}(r') + O^{E} \quad (2)
 $$
 
-where `O^(←⟨P⟩`) denotes the order of other production agents;`O^(←⟨C`⟩)
-denotes the order from the consumer; `O^(E)` denotes export orders (for
+where $`O^{\rightarrow \langle P \rangle}`$ denotes the order of other production agents;$`O^{\rightarrow \langle C \rangle}`$
+denotes the order from the consumer; $`O^{E}`$ denotes export orders (for
 open economies).
 
 **Production capacity.** The production capacity of this agent is
@@ -445,9 +441,9 @@ $$
 X^{cap} = \alpha \times (1 - \theta) \times \overline{X} \quad (3)
 $$
 
-where `α` is overproduction capacity (the value is 1 by default); `θ` is
+where $`alpha`$ is overproduction capacity (the value is 1 by default); $`theta`$ is
 the reduction in production capacity relative to pre-event level (the
-value is 0 by default); $\overline{X}$ is the production capacity at the
+value is $`theta`$ by default); $`\overline{X}`$ is the production capacity at the
 pre-event level.
 
 **Production constraint.** The production constraint due to the
@@ -469,14 +465,14 @@ X^{\,{r', s'}} = \dfrac{I(r', s')}{a(r', s')} \times \min\{\,1,\dfrac{I(r', s')}
 \quad \text{if } s' \text{ is a specific product} \quad (5)
 $$
 
-where `I^(R)` is the required inventory level, `n` is the target usage
-days for different products; `X^(a)` is the actual production; a is the
-input requirement of raw materials for unitary production; `X^(s')` or
-`X^(r', s')` is possible production levels constrained by inventories of
-different products; `I` is the current inventory level; `Ψ` is the ratio
+where $`I^{R}`$ is the required inventory level, $`n`$ is the target usage
+days for different products; $`X^{a}`$ is the actual production; a is the
+input requirement of raw materials for unitary production; $`X^{s'}`$ or
+$`X^{r', s'}`$ is possible production levels constrained by inventories of
+different products; $`I`$ is the current inventory level; $`Psi`$ is the ratio
 of the required inventory level below which the production agent would
 use only part of the inventory in order to smooth production between
-simulation steps (the value of `Ψ` is 0 by default).
+simulation steps (the value of $`Psi`$ is 0 by default).
 
 ### 5.1.2 Sending out products onto transportation chains to other agents
 
@@ -505,7 +501,7 @@ Z^{\rightarrow E} = X^{a} \times \dfrac{O^{E}}{O^{tot}}
 \quad \text{if } X^{a} < O^{tot} \quad (7)
 $$
 
-where `Z^(→⟨P⟩)`, `Z^(→⟨C⟩)`, and `Z^(→E)` denote products sent toward
+where $`Z^{\rightarrow \langle P \rangle}`$, $`Z^{\rightarrow \langle C \rangle}`$, and $`Z^{\rightarrow E}`$ denote products sent toward
 different production agents, consumption agents, and export (which is
 only for the open economy).
 
@@ -517,7 +513,7 @@ $$
 I_{t}(s') = I_{t-1}(s') - X_{t-1}^{a} \times a_{t-1}(s') + \sum Z^{\leftarrow \langle P \rangle}(r', s') \quad (8)
 $$
 
-where `I_(t)(s')` is the inventory of `s'` for the production agent in
+where $`I_t(s')`$ is the inventory of `s'` for the production agent in
 period `t`; `I_(t-1)(s')` is the inventory of `s'` for the production
 agent in period `t-1`; `X_(t-1)^(a)` is the actual production in `t-1`;
 `a_(t-1)(s')` is the input requirement of `s'` for unit production in
