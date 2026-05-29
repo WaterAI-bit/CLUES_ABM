@@ -200,7 +200,7 @@ class WorldOfMatrixGPU:
         
         # ======== MRIO variables (which could be initialized automatically)========
         # Resource constraints IN EACH SIMULATION PERIOD, may or maynot needed to be provided externally.
-        self.ResourceConstraints = None # MRIO_R*1 vector: Water constraints for each region in MRIO table.
+        self.ResourceConstraints = None # MRIO_R*1 vector: Resource constraints for each region in MRIO table.
         # Conversion matrices for MRIO computations
         self.Regions_Matrix = None # MRIO_R*N_P matrix that converts rows of region-sectors to rows of regions
         self.Regions_Matrix_ResourceIntensity = None # MRIO_R*N_P matrix where each row contains the water intensities of the sectors in the corresponding region.
