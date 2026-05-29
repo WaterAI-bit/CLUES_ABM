@@ -410,7 +410,7 @@ adjusting production technology, post-disaster reconstruction, etc.
 Below we detail each type of behavior of this agent `⟨P⟩(r,s)` in one
 simulation step (e.g., one day).
 
-### 1) Producing goods using the Leontief production function
+### 5.1.1 Producing goods using the Leontief production function
 
 The production is based on the Leontief production function and is
 limited by the total order, production capacity, and raw material
@@ -480,7 +480,7 @@ of the required inventory level below which the production agent would
 use only part of the inventory in order to smooth production between
 simulation steps (the value of `Ψ` is 0 by default).
 
-### 2) Sending out products onto transportation chains to other agents
+### 5.1.2 Sending out products onto transportation chains to other agents
 
 The distribution of products is based on received orders and observed
 patterns of product distribution. When the actual production is equal to
@@ -511,7 +511,7 @@ where `Z^(→⟨P⟩)`, `Z^(→⟨C⟩)`, and `Z^(→E)` denote products sent to
 different production agents, consumption agents, and export (which is
 only for the open economy).
 
-### 3) Sending orders to replenish intermediate product inventories
+### 5.1.3 Sending orders to replenish intermediate product inventories
 
 The evolution of inventory of an intermediate product s' is
 
@@ -544,7 +544,7 @@ toward different production agents; `Δt` is the time length of each
 simulation step (e.g., one day); `τ_(I)` is the timescale for adjusting
 to targeted inventory levels.
 
-### 4) Adjusting upstream suppliers to alleviate the shortage of intermediate products
+### 5.1.4 Adjusting upstream suppliers to alleviate the shortage of intermediate products
 
 The order shares of a homogeneous intermediate product `s'` given to
 connected suppliers in different regions can be adjusted in each period,
@@ -574,7 +574,7 @@ $$
 where `O^(→⟨P⟩)(s')` is the total order for the intermediate product
 `s'` determined in equation (10).
 
-#### 5) Using overproduction capacity to ensure product supply
+### 5.1.5 Using overproduction capacity to ensure product supply
 
 If the actual production level is smaller than the total order received,
 i.e., `X^(a) < O^(tot)`, there is a scarcity. In this case, the
@@ -596,7 +596,7 @@ where `α^(max)` denotes the maximum possible overproduction capacity
 (with the default value of 1.2); `τ_(α)` is the timescale for adjusting
 to maximum production capacity.
 
-#### 6) Adjusting production technology to meet the shortage of intermediate products
+### 5.1.6 Adjusting production technology to meet the shortage of intermediate products
 
 **Case of scarcity.** Faced with a shortage of an intermediate product,
 the production agent will gradually reduce the requirement for it to a
@@ -651,7 +651,7 @@ $$
 that is, the agent may use imported goods to compensate for the
 decreased/increased requirements for scarce intermediate inputs.
 
-#### 7) Post-disaster reconstruction (gradual restoration of production capacity)
+### 5.1.7 Post-disaster reconstruction (gradual restoration of production capacity)
 
 If the production agent suffers from an external shock resulting in the
 reduction of production capacity (with `θ` representing the ratio of
@@ -672,7 +672,7 @@ reconstruction.
 The production agent stores the relevant state variables in the current
 simulation period, which will be used in computations in future periods.
 
-### (2) Consumption agent
+## 5.2 Consumption agent
 
 ***Consumption agent*** `⟨C⟩(r)` consumes products s' = 1, 2, ⋯, S in
 each simulation period. To do this, it must send orders to different
@@ -680,7 +680,7 @@ suppliers and adjust these orders according to the actual supply
 fluctuations. Specifically, the consumption agent acts in the following
 ways.
 
-#### 1) Sending order outflows
+### 5.2.1 Sending order outflows
 
 In a simulation period, the order shares (for a homogeneous product
 `s'`) given to producers in different regions will be adjusted according
@@ -711,12 +711,12 @@ $$
 where `O^(→⟨P⟩)(s')` is the total order for this homogeneous product
 `s'`, which is determined by the steady-state consumption level.
 
-#### 2) Record key state variables
+### 5.2.2 Record key state variables
 
 The consumption agent stores the relevant state variables in the current
 simulation period, which will be used in computations in future periods.
 
-### (3) Transportation agent
+## 5.3 Transportation agent
 
 Transportation agent is the transportation chain connecting a pair of
 agents. Each transportation chain can transport one type of product. It
@@ -732,9 +732,9 @@ last element of the chain is unloaded to the receiving agent. In this
 way, we can simulate the product transportation processes between
 different agents. Below we express the above image mathematically.
 
-#### Transportation between production agents
+### 5.3.1 Transportation between production agents
 
-##### 1) Transportation chain between production agents
+#### 1) Transportation chain between production agents
 
 `⟨T⟩^(→⟨P⟩)(r₁,s₁,r₂,s₂)` delivers the cargo produced by the production
 agent in `⟨P⟩(r₁,s₁)` to the production agent in `⟨P⟩(r₂,s₂)`. The
@@ -745,7 +745,7 @@ $$
 Z_{t}(\cdot \mid \langle T \rangle^{\rightarrow \langle P \rangle}(r_1,s_1,r_2,s_2)) \equiv (Z_{1,t}, Z_{2,t}, \cdots, Z_{L,t}) \quad (22)
 $$
 
-##### 2) Loading
+#### 2) Loading
 
 In the period of $t+1$, the cargo is loaded to the transportation agent.
 
@@ -762,7 +762,7 @@ $Z_{t}^{\rightarrow \langle P \rangle}(r_2,s_2 \mid \langle P \rangle(r_1,s_1))$
 represents the cargo produced by `⟨P⟩(r₁,s₁)` and planned to be
 delivered to `⟨P⟩(r₂,s₂)` in $t$.
 
-##### 3) Blockage (optional, not in this study)
+#### 3) Blockage (optional, not in this study)
 
 If this transportation agent `⟨T⟩^(→⟨P⟩)(r₁,s₁,r₂,s₂)` has $b$ units of
 goods $s_1$ blocked at step $l$ ($l=1,2,\ldots,L$), then unit $b$ of
@@ -780,7 +780,7 @@ $$
 \end{aligned}
 $$
 
-##### 4) Unloading
+#### 4) Unloading
 
 The cargo in the last step $L+1$ of transportation chain is unloaded to
 `⟨P⟩(r₂,s₂)` in simulation period $t$:
@@ -789,7 +789,7 @@ $$
 Z_{t}^{\leftarrow \langle P \rangle}( r_{1}, s_{1} \mid \langle P \rangle( r_{2}, s_{2} ) ) = \widetilde{\widetilde{Z}}_{L+1,t+1} \quad (25)
 $$
 
-##### 5) Updating
+#### 5) Updating
 
 After unloading the cargo in previous step, the cargo at each step of
 the transportation agent in $t+1$ is:
@@ -802,11 +802,11 @@ $$
 Therefore, we have completed updating the transportation chain
 connecting the two production agents `⟨P⟩(r₁,s₁)` and `⟨P⟩(r₂,s₂)`.
 
-------------------------------------------------------------------------
 
-#### Transportation between production agent and consumption agents
 
-##### 1) Transportation agent between production agent and consumption agents
+### 5.3.2 Transportation between production agent and consumption agents
+
+#### 1) Transportation agent between production agent and consumption agents
 
 `⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)` delivers the cargo produced by the production
 agent in `⟨P⟩(r₁,s₁)` to the consumption agent in `⟨C⟩(r₂)`. The length
@@ -817,7 +817,7 @@ $$
 Z_{t}(\cdot \mid \langle T \rangle^{\rightarrow \langle C \rangle}(r_1,s_1,r_2)) \equiv (Z_{1,t}, Z_{2,t}, \cdots, Z_{L,t}) \quad (27)
 $$
 
-##### 2) Loading
+#### 2) Loading
 
 In the period of $t+1$, the cargo is loaded to the transportation agent.
 
@@ -834,7 +834,7 @@ $Z_{t}^{\rightarrow \langle C \rangle}(r_2 \mid \langle P \rangle(r_1,s_1))$
 represents the cargo produced by production agent `⟨P⟩(r₁,s₁)` and
 planned to be delivered to consumption agent `⟨C⟩(r₂)` in $t$.
 
-##### 3) Blockage (Optional, not in this study)
+#### 3) Blockage (Optional, not in this study)
 
 If this transportation agent `⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)` has $b$ units of
 goods $s_1$ blocked at step $l$ ($l=1, 2, \ldots, L$), then unit $b$ of
@@ -851,7 +851,7 @@ $$
 \end{aligned}
 $$
 
-##### 4) Unloading
+#### 4) Unloading
 
 The cargo on the last step $L+1$ of the transportation chain is unloaded
 to the target consumption agent `⟨C⟩(r₂)` in simulation period $t$:
@@ -860,7 +860,7 @@ $$
 Z_{t}^{\leftarrow \langle P \rangle}( r_{1}, s_{1} \mid \langle C \rangle( r_{2} ) ) = \widetilde{\widetilde{Z}}_{L+1,t+1} \quad (30)
 $$
 
-##### 5) Updating
+#### 5) Updating
 
 After unloading the cargo in the previous step, the cargo at each step
 of the transportation chain in $`t+1`$ is:
@@ -874,8 +874,5 @@ Therefore, we have completed updating the transportation chain
 connecting the production agent `⟨P⟩(r₁,s₁)` and the consumption agent
 `⟨C⟩(r₂)`.
 
-
-**The Cauchy-Schwarz Inequality**\
-$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
 
 
