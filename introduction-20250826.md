@@ -873,3 +873,9 @@ $$
 Therefore, we have completed updating the transportation chain
 connecting the production agent `⟨P⟩(r₁,s₁)` and the consumption agent
 `⟨C⟩(r₂)`.
+
+
+**The Cauchy-Schwarz Inequality**\
+$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+
+
