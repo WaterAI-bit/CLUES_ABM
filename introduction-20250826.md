@@ -9,12 +9,11 @@ The CLUES ABM model (Climate-resilient & Low-carbon Unfolding Economic Scenarios
 
 Figure 1 illustrates the simulation process of the CLUES-ABM model. Within a predefined world (such as China or globally), based on the supply-demand in the industrial chain, production agents and production/consumption agents transfer information or material via transportation agents. The transmission of material and information flows is determined by the initial world and the adaptive behavior of various agents, spreading and diffusing through the supply chain network.
 
-![CLUES-ABM model schematic diagram](https://github.com/WaterAI-bit/CLUES_ABM/raw/main/figures/clues_abm_flow.png)
-
 
 <p align="center">
   <img src="https://github.com/WaterAI-bit/CLUES_ABM/raw/main/figures/clues_abm_flow.png" alt="CLUES-ABM model schematic diagram" width="60%">
 </p>
+Figure 1 XXXXXXX
 
 
 **To be supplemented: 1 link points to the second library**
@@ -102,16 +101,6 @@ ver
 ```
 
 
-
-
-
-
-
-
-
-
-
-
 ## 3.2 Get Code
 
 The code is as follows:
@@ -123,147 +112,147 @@ cd CLUES_ABM
 
 ## 3.3 Model Background & Core Architecture
 
-CLUES ABM is a **Dynamic Complex Network Model** based on adaptive agents that simulates the evolution of multiregional economic systems under external shocks, and is particularly suitable for assessing supply chain impacts of climate change adaptation and mitigation.
+CLUES ABM is a **Dynamic Complex Network Model** based on adaptive agents. It simulates the evolution of multi-regional economic systems under external shocks and is particularly well-suited for assessing the supply chain impacts of climate change adaptation and mitigation.
 
- - **Behavioral  network data**<br>
-&emsp; &emsp; Multi-regional input-output tables（eg. ```MRIOExample.json```）<br>
-&emsp; &emsp; Enterprise Network Business Database<br>
-&emsp; &emsp; Trade network data compiled by individuals<br>
+* **Behavioral Network Data**
+  * Multi-regional input-output tables (e.g., `MRIOExample.json`)
+  * Enterprise Network Business Database
+  * Custom/User-compiled trade network data
 
- - **Subject type**<br>
- &emsp; &emsp; Production node (enterprise)<br>
- &emsp; &emsp; Consumption node<br>
- &emsp; &emsp; Transport node<br>
+* **Agent Types**
+  * Production agent
+  * Consumption agent
+  * Transportation agent
 
- - **Adaptive behavior**<br>
-&emsp; &emsp; Overproduction Capacity<br>
-&emsp; &emsp; Inventories<br>
-&emsp; &emsp; Trade Adaptation<br>
-&emsp; &emsp; Production Adaptation<br>
-&emsp; &emsp; Reconstruction<br>
+* **Adaptive Behaviors**
+  * Overproduction capacity utilization
+  * Inventory management
+  * Trade structure adaptation
+  * Production process adaptation
+  * Post-disaster reconstruction
 
- - **Program structure**<br>
-&emsp; &emsp; object-oriented programming（OOP）<br>
-&emsp; &emsp; core category：<br>
-&emsp; &emsp; &emsp; &emsp;	World<br>
-&emsp; &emsp; &emsp; &emsp;	AgentProduction<br>
-&emsp; &emsp; &emsp; &emsp;	AgentConsumption<br>
-&emsp; &emsp; &emsp; &emsp;	AgentTransportation<br>
+* **Program Structure**
+  * Object-Oriented Programming (OOP) architecture
+  * Core Classes:
+    * `World`
+    * `AgentProduction`
+    * `AgentConsumption`
+    * `AgentTransportation`
 
- - **Simulation cycle** (for example, 365 days a year)：<br>
-&emsp; &emsp;Renewal of environmental and policy constraints<br>
-&emsp; &emsp;Connecting subjects (establishing interactions)<br>
-&emsp; &emsp;Main actions：<br>
-&emsp; &emsp; &emsp; &emsp;Production body: production → preparing products → preparing orders → adaptation → memorization<br>
-&emsp; &emsp; &emsp; &emsp;Consumption subjects: consumption → preparation of orders → memorization<br>
-&emsp; &emsp;Go to next day<br>
+* **Simulation Cycle** (e.g., 365 days a year)
+  1. Update environmental and policy constraints.
+  2. Connect subjects and establish interactions.
+  3. Execute core agent actions:
+     * **Production Agents:** Production $\rightarrow$ Product preparation $\rightarrow$ Order placement $\rightarrow$ Adaptation $\rightarrow$ Memory update
+     * **Consumption Agents:** Consumption $\rightarrow$ Order placement $\rightarrow$ Memory update
+  4. Advance to the next time step (day).
 
-Understanding this structure helps to customize the configuration with scenario impact
+> **Note:** Understanding this underlying core architecture is essential for customizing the model configurations and properly setting up scenario impacts.
 
-## 3.4 Interactive operation
 
-Run it in the project root directory:
+## 3.4 Script Running
 
-```bash
-solara run app.py
-```
-The browser opens an interactive interface that supports a visual view of the simulation.
+Run the script in the project root directory:
 
-## 3.5 Script Running
-
-Run in the project root directory：
 ```bash
 # Note the space in the filename
 python "example 1 basic run.py"
 ```
-Script flow:
 
-(1) Load the data (e.g. ```cMRIOExample.json```)
-(2) Set simulation parameters (time step ```delta_t```, total days ```day_total```, target days ```ndays_target_default```)
-(3) Initialize subjects (production, consumption, transport)
-(4) Injecting scenario shocks (modifying ```AgentsP_Theta```to simulate capacity declines)
-(5) Advancing through the cycle (flow of goods → subject decisions → memory update)
-(6) Record results (value added changes, network flows, scarcity, etc.)
-(7) Plotting/saving (line graphs + ```.npz``` result files)
+Script Execution Flow:
+
+1. Load the data (e.g. `cMRIOExample.json`)
+2. Set simulation parameters (time step `delta_t`, total days `day_total`, target days `ndays_target_default`)
+3. Initialize agents (production, consumption, transport)
+4. Injecting scenario shocks (modifying `AgentsP_Theta`to simulate capacity declines)
+5. Advancing through the cycle (flow of goods → subject decisions → memory update)
+6. Record results (value added changes, network flows, scarcity, etc.)
+7. Plotting/saving (line graphs + `.npz` result files)
+
+Expected Output:
+
+* A daily Gross Value Added (GVA) line chart window will automatically pop up to visualize the economic impact.
+* Optionally, save the results to `TestResults_ReductionInProductionCapacityExample.npz` for post-processing.
 
 
+## 3.5 Adjustable Configurations and Variables
 
+This section outlines the primary configuration files, adjustable simulation parameters, and core output variables available for customization.
 
+### 3.5.1 Input Data & Model Dimensions
+* **`MRIOExample.json`:** Represents the multi-regional input-output data structure. Key dimensions and matrices include:
+  * `MRIO_R`: Total number of regions.
+  * `MRIO_S`: Total number of economic sectors.
+  * `MRIO_Z`: Intermediate demand matrix between regions and sectors.
+  * `MRIO_C`: Final consumption matrix.
+  * `MRIO_VA`: Value-added matrix for production nodes.
 
-After running: <br>
-&emsp; &emsp;A daily Gross Value Added line chart will pop up <br>
-&emsp; &emsp;Optionally, save the results to ```TestResults_ReductionInProductionCapacityExample.npz```.<br>
-The browser will open an interactive interface that supports visual viewing of the simulation.
+### 3.5.2 Temporal Parameters
+* `delta_t`: Time step size for the simulation loop (default is `1/365`, representing a single day).
+* `day_total`: Total duration of the simulation run (default is `365` days).
+* `ndays_target_default`: Target days for inventory buffer or production forward-planning (default is `3`).
 
-## 3.6 Adjustable Configurations and Variables<br>
+### 3.5.3 Scenario Shock & Policy Impact Settings
+* **Capacity Shocks (`AgentsP_Theta`):** Modified directly within the example script. By setting targeted values in the capacity reduction vector/matrix over specified day intervals, users can endogenously simulate sudden drops in manufacturing or supply capacity.
+* **Transportation & Logistics (`AgentsT_*`):** Controls the cargo flow propulsion velocity and unloading mechanisms. The structural mapping and connectivity between networks are managed using the indexing arrays `k_NetPP` (Production-to-Production) and `k_NetPC` (Production-to-Consumption).
 
-  • 	```MRIOExample.json```：Multi-regional input-output data（```MRIO_R```、```MRIO_S```、```MRIO_Z```、```MRIO_C```、```MRIO_VA```etc.）<br>
-   •	Simulation step and duration： ```delta_t = 1/365```，```day_total = 365```，```ndays_target_default = 3```<br>
-   •	Impact settings (modified directly within the example script)： <br>
-   •	Setting ```AgentsP_Theta``` for some production agents in a specified number of day intervals to simulate a drop in capacity<br>
-   •	Transportation chain length/mapping:<br>
-   •	Control of cargo flow propulsion and unloading positions through ```AgentsT_*``` with index ```k_NetPP / k_NetPC```.<br>
-   •	Main output variables:<br>
-&emsp; &emsp;Change in value added at regional/agent level<br>
-&emsp; &emsp;Changes in cross-regional product flows<br>
-&emsp; &emsp;Scarcity indicators<br>
-&emsp; &emsp;Percentage loss of value added<br>
-
-## 3.7 Results Visualization
-
-   - Interactive mode: browser visualization<br>
-   - Scripting mode: terminal output + pop-up charts + optional ```.npz``` data file<br>
-   
+### 3.5.4 Primary Output Variables
+The model dynamically tracks and exports the following metrics for systemic risk assessment:
+* **Change in value added at regional/agent level:** Temporal changes in gross value added at both the sub-national regional level and individual agent level.
+* **Changes in cross-regional product flows:** Spatiotemporal updates in cross-regional and inter-sectoral product flows.
+* **Scarcity indicators:** Supply chain bottlenecks and localized product deficits across regions.
+* **Percentage loss of value added:** Cumulative percentage loss of value added relative to the baseline equilibrium state.
 
 
 # 4. Output Description
 
 ## 4.1 Output Variables
 
-1. **S0_Evolution_ValueAdded_ProductionAgents**: Evolution of value added by each production agent each step for one simulation period.
+1. **`S0_Evolution_ValueAdded_ProductionAgents`**: Evolution of value added by each production agent each step for one simulation period.
    - **Shape**: `(model.N_P, day_total)` where `model.N_P` represents the total number of production agents, and `day_total` is the total simulation days.
 
-2. **S0_ProductInNetwork_Region**: Tracks product flow between each region every step. This variable is a 3D array where `S0_ProductInNetwork_Region[i, j, t]` represents the number of products flowing from region `i` to region `j` on day `t`.
+2. **`S0_ProductInNetwork_Region`**: Tracks product flow between each region every step. This variable is a 3D array where `S0_ProductInNetwork_Region[i, j, t]` represents the number of products flowing from region `i` to region `j` on day `t`.
    - **Shape**: `(model.MRIO_R, model.MRIO_R, day_total)` where `model.MRIO_R` represents the total number of regions.
 
-3. **S0_ProductInNetwork_Region_Change**: Tracks changes in product flow between regions relative to the initial state `SS_ProductInNetwork_Region`. `S0_ProductInNetwork_Region_Change[i, j, t]` represents the change in product flow from region `i` to region `j` on day `t` compared to the initial state.
+3. **`S0_ProductInNetwork_Region_Change`**: Tracks changes in product flow between regions relative to the initial state `SS_ProductInNetwork_Region`. `S0_ProductInNetwork_Region_Change[i, j, t]` represents the change in product flow from region `i` to region `j` on day `t` compared to the initial state.
    - **Shape**: `(model.MRIO_R, model.MRIO_R, day_total)`
 
-4. **S0_Evolution_Scarcity_RegionsProducts**: Tracks the scarcity level of each product in each region every step. `S0_Evolution_Scarcity_RegionsProducts[i, k, t]` represents the scarcity level of product `k` in region `i` on day `t`.
+4. **`S0_Evolution_Scarcity_RegionsProducts`**: Tracks the scarcity level of each product in each region every step. `S0_Evolution_Scarcity_RegionsProducts[i, k, t]` represents the scarcity level of product `k` in region `i` on day `t`.
    - **Shape**: `(model.MRIO_R, model.Sa, day_total)` where `model.Sa` represents the total number of products.
 
+## 4.2 Post-Processing Variables (Calculated Post-Loops)
 
-## 4.2 Post-Processing Variables (Calculated after Loops)
-
-1. **S0_Evolution_ValueAdded_Region**  
+1. **`S0_Evolution_ValueAdded_Region`**  
    Tracks the total Value Added evolution for each region every step. It is derived by aggregating `S0_Evolution_ValueAdded_ProductionAgents` by region.
    - **Shape**: `(model.MRIO_R, day_total)`  
    Where `model.MRIO_R` represents the total number of regions, and `day_total` is the total number of simulation days.
 
-2. **S0_LossPerc_ProductionAgents**  
+2. **`S0_LossPerc_ProductionAgents`**  
    Tracks the loss percentage in Value Added for each production agent relative to its initial state. Only production agents with initial Value Added greater than 1e-4 are considered for the loss percentage.
    - **Shape**: `(model.N_P, 1)`  
    Where `model.N_P` represents the total number of production agents.
 
-3. **S0_LossPerc_Region**  
+3. **`S0_LossPerc_Region`**  
    Tracks the loss percentage in Value Added for each region relative to its initial state. Only regions with initial Value Added greater than 1e-4 are considered for the loss percentage.
    - **Shape**: `(model.MRIO_R, 1)`  
    Where `model.MRIO_R` represents the total number of regions.
 
-4. **S0_ProductInNetwork_Region_Change_Mean**  
+4. **`S0_ProductInNetwork_Region_Change_Mean`**  
    Tracks the average product flow change between regions, calculated by averaging `S0_ProductInNetwork_Region_Change` over the time dimension.
    - **Shape**: `(model.MRIO_R, model.MRIO_R)`  
    Where `model.MRIO_R` represents the total number of regions.
 
 > **Note**: Based on the above variables, we can deduce the total and indirect losses (i.e., total losses minus direct losses) for each production agent and each region, both daily and on average.
 
+
 # 5. Model Principles
 
 The model is an agent-based model for simulating the evolution of an input-output system which can either be monetary or physical, single- or multi-regional. The modeled scenarios can unfold at relatively fine temporal scales (such as days).
 
-Given enough data and computing power, this agent-based model can be applied to any input-output system with many producers, consumers, and transporters. Below we assume, as in Multi-Regional Input-Output (MRIO) models, there are r = 1, ⋯, R regions and s = 1, ⋯, S sectors in each region. Each region-sector is represented by a production agent `⟨P⟩(r,s)`. The final consumption in each region is represented by a consumption agent `⟨C⟩(r)`. The transportation agent from production agents `⟨P⟩(r₁,s₁)` to `⟨P⟩(r₂,s₂)` is `⟨T⟩^(→⟨P⟩)(r₁,s₁,r₂,s₂)`, shipping the relevant intermediate product, and the transportation agent from the production agent `⟨P⟩(r₁,s₁)` to the consumption agent `⟨C⟩(r₂)` is `⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)`, shipping the final product to consumers in region r₂.
+Given enough data and computing power, this agent-based model can be applied to any input-output system with many producers, consumers, and transporters. Below we assume, as in Multi-Regional Input-Output (MRIO) models, there are $r = 1, \dots, R$ regions and $s = 1, \dots, S$ sectors in each region. Each region-sector is represented by a production agent `⟨P⟩(r,s)`. The final consumption in each region is represented by a consumption agent `⟨C⟩(r)`. The transportation agent from production agents `⟨P⟩(r₁,s₁)` to `⟨P⟩(r₂,s₂)` is `⟨T⟩^(→⟨P⟩)(r₁,s₁,r₂,s₂)`, shipping the relevant intermediate product, and the transportation agent from the production agent `⟨P⟩(r₁,s₁)` to the consumption agent `⟨C⟩(r₂)` is `⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)`, shipping the final product to consumers in region `r₂`.
 
 The specific behaviors and corresponding micro-foundations of the these agents including production agents, consumption agents, and transportation agents are detailed here. According to the classification, the behavior mechanism of each agent is introduced in detail.
+
 
 ## 5.1 Production agent
 
@@ -273,6 +262,6 @@ The specific behaviors and corresponding micro-foundations of the these agents i
 
 The production is based on the Leontief production function and is limited by the total order, production capacity, and raw material supply:
 
-$$
+```math
 X^{a} = \min\{O^{tot}, X^{cap}, \min\{X^{s'}\}, \min\{X^{r', s'}\}\} \quad (1)
-$$
+```
