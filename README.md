@@ -71,7 +71,7 @@ China's socio-economic systems in the face of environmental change.
 
 ## 2.3 Applications & Scenario Templates
 
-To maintain a lightweight and efficient core computational engine, comprehensive empirical case studies and large-scale simulation playbooks are maintained in our companion repository: **[CLUES_ABM_Applications](替换为你的实际应用库链接)**. 
+To maintain a lightweight and efficient core computational engine, comprehensive empirical case studies and large-scale simulation playbooks are maintained in our companion repository: **[CLUES_ABM_Applications](https://github.com/WaterAI-bit/CLUES_ABM_Applications)**. 
 
 We provide three standardized operational templates to guide user-defined policy evaluations and multi-hazard resilience benchmarking. These templates dynamically adjust their internal indexing topology based on the spatial dimension (`model.MRIO_R`) and sector scaling (`model.MRIO_S`) configured in the core engine.
 
@@ -81,7 +81,7 @@ We provide three standardized operational templates to guide user-defined policy
 | **Template 2: Resource Constraints** | Analyzes the cascading systemic feedback loops triggered by an abrupt supply squeeze of critical resource inputs or raw materials. | Quantifying resource scarcity risks (e.g., water/energy dual-control), critical metal de-risking, and international trade border restrictions (e.g., CBAM policies). |
 | **Template 3: Transportation Line Blockage** | Simulates micro-level logistics latency, freight distribution delays, and bottleneck congestion across augmented infrastructure layers. | Evaluating physical infrastructure vulnerability, sub-national logistics chain disruptions, and supply chain topological friction. |
 
-👉 **[Explore Full Workflows in CLUES_ABM_Applications ➔](替换为你的实际应用库链接)**
+👉 **[Explore Full Workflows in CLUES_ABM_Applications ➔](https://github.com/WaterAI-bit/CLUES_ABM_Applications)**
 
 
 ## 2.4 Selected Publications
