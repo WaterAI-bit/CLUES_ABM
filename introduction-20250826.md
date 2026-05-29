@@ -212,6 +212,9 @@ $$
 X^{a} = \min\{O^{tot}, X^{cap}, \min\{X^{s'}\}, \min\{X^{r', s'}\}\} \quad (1)
 $$
 
+```math
+X^{a} = \min\{O^{tot}, X^{cap}, \min\{X^{s'}\}, \min\{X^{r', s'}\}\} \quad (1)
+
 where X^(a) is the actual production; O^(tot) denotes the total order; X^(cap) is production capacity; X^(s') is the production constraint due to the inventory of intermediate product s' (if s' is a homogeneous product such as rice), and X^(r', s') is the production constraint due to the inventory of intermediate product s' from region r' (if s' is specific such as a particular type of machine component). Note that if an intermediate product s' is specific, the products s' from different regions are assumed to be different. These limitation variables are defined in equations (2) to (5) below, respectively.
 
 **Total order.** The total order received by this production agent is
