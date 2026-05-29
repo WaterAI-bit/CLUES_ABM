@@ -865,7 +865,7 @@ Z_{t+1}( \cdot \mid \langle T \rangle^{\rightarrow \langle C \rangle}( r_{1}, s_
 $$
 
 Therefore, we have completed updating the transportation chain
-connecting the production agent `⟨P⟩(r₁,s₁)` and the consumption agent
+connecting the production agent $`⟨P⟩(r₁,s₁)`$ and the consumption agent
 `⟨C⟩(r₂)`.
 
 
