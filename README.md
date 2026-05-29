@@ -414,10 +414,10 @@ $$
 X^{a} = \min\{O^{tot}, X^{cap}, \min\{X^{s'}\}, \min\{X^{r', s'}\}\} \quad (1)
 $$
 
-where $`X^{(a)}`$ is the actual production; O\^(tot) denotes the total
-order; $`X^{(cap)}`$ is production capacity; $`X^{(s')}`$ is the production
+where $`X^{a}`$ is the actual production; O\^(tot) denotes the total
+order; $`X^{cap}`$ is production capacity; $`X^{s'}`$ is the production
 constraint due to the inventory of intermediate product $`s'`$ (if $`s'`$ is
-a homogeneous product such as rice), and $`X^{(r', s')}`$ is the production
+a homogeneous product such as rice), and $`X^{r', s'}`$ is the production
 constraint due to the inventory of intermediate product $`s'`$ from region
 $`r'`$ (if $`s'`$ is specific such as a particular type of machine
 component). Note that if an intermediate product $`s'`$ is specific, the
@@ -431,7 +431,7 @@ $$
 O^{tot} = \sum O^{\leftarrow \langle P \rangle}(r',s') + \sum O^{\leftarrow \langle C \rangle}(r') + O^{E} \quad (2)
 $$
 
-where $`O^{\rightarrow \langle P \rangle}`$ denotes the order of other production agents;$`O^{\rightarrow \langle C \rangle}`$
+where $`O^{\leftarrow \langle P \rangle}`$ denotes the order of other production agents; $`O^{\leftarrow \langle C \rangle}`$
 denotes the order from the consumer; $`O^{E}`$ denotes export orders (for
 open economies).
 
@@ -514,7 +514,7 @@ I_{t}(s') = I_{t-1}(s') - X_{t-1}^{a} \times a_{t-1}(s') + \sum Z^{\leftarrow \l
 $$
 
 where $`I_{t}(s')`$ is the inventory of $`s'`$ for the production agent in
-period $`t`$; `$I_{t-1}(s')`$ is the inventory of $`s'`$ for the production
+period $`t`$; $`I_{t-1}(s')`$ is the inventory of $`s'`$ for the production
 agent in period $`t-1`$; $`X_{t-1}^{a}`$ is the actual production in $`t-1`$;
 $`a_{t-1}(s')`$ is the input requirement of $`s'`$ for unit production in
 $`t-1`$; $`Z^{\leftarrow \langle P \rangle}`$ denotes the product inflows from production agents in
@@ -556,7 +556,7 @@ where $`Z^{\rightarrow \langle P \rangle}(r,s \mid \langle P \rangle(r',s'))`$ d
 production agent $`\langle P \rangle(r,s)`$ in consideration) by production agent
 $`\langle P \rangle(r',s')`$; $`o_{t}^{\rightarrow \langle P \rangle}(r',s')`$ denotes the share of order for
 intermediate product $`s'`$ sent toward the supplier in region $`r'`$ in the
-current time period $`t`$; $`tau_{O}`$ denotes the timescale for adjusting to
+current time period $`t`$; $`\tau_{O}`$ denotes the timescale for adjusting to
 the target order distribution.
 
 Therefore, the order to the supplier in the region $`r'`$ is
@@ -691,7 +691,7 @@ $$
 where $`Z^{\rightarrow \langle C \rangle}(r,s \mid \langle P \rangle(r', s'))`$ denotes the product sent toward the
 consumption agent $`\langle C \rangle(r)`$ in consideration by production agent
 $`\langle P \rangle(r',s')`$; $`o_t^{\rightarrow \langle P \rangle}(r',s')`$ denotes the share of order for
-product `s'` sent toward the connected supplier in region $`r'`$ in the
+product $`s'`$ sent toward the connected supplier in region $`r'`$ in the
 simulation period $`t`$; $`\tau_O`$ denotes the timescale for adjusting to
 the target order distribution.
 
@@ -831,7 +831,7 @@ planned to be delivered to consumption agent $`\langle C \rangle(r_2)`$ in $t$.
 #### 3) Blockage (Optional, not in this study)
 
 If this transportation agent $`⟨T⟩^{\rightarrow \langle C \rangle}(r_1,s_1,r_2)`$ has $b$ units of
-goods $`s_1`$ blocked at step `l$ ($l=1, 2, \ldots, L`), then unit $b$ of
+goods $`s_1`$ blocked at step $`l (l=1, 2, \dots, L`$), then unit $b$ of
 goods $`s_1`$ on step $l$ cannot be transported forward. If $b>0$, the
 transportation chain is blocked; if $b=0$, the transportation chain is
 not blocked. Similar to the previous case, the relevant production flows
