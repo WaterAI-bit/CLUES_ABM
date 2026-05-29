@@ -1,47 +1,11 @@
-
-# CLUES ABM Model
-
-## Summary
-
-The CLUES model is an agent-based model for simulating the evolution of an input-output system which can either be monetary or physical, single- or multi-regional. The abbreviation “CLUES” stands for “Climate-resilient and Low-carbon Unfolding Economic Scenarios”, which implies the model can be used to model the supply chain impacts of adaptation and mitigation for global environmental change and the modeled scenarios can unfold at relatively fine temporal scales (such as days).
-
-## How to Run
-
-To run the model interactively, in this directory, run the following command
-
-```
-    $ solara run app.py
-```
-
-## Files
-
-* ``mat_to_python.py``: Contains the Schelling model class
-*  ``example 1 basic run.py``: Contains the Schelling agent class
-* ``WorldOfMatrix_GPU4.py``: Code for the interactive visualization.
-* ``TestResults_ReductionInProductionCapacityExample.npz``: Notebook demonstrating how to run experiments and parameter sweeps on the model.
-* ``TMRIOExample.json``:
-
-## Results
-
-![中国每日和累积的间接经济损失](https://github.com/WaterAI-bit/CLUES_ABM/blob/main/results/%E4%B8%AD%E5%9B%BD%E6%AF%8F%E6%97%A5%E5%92%8C%E7%B4%AF%E7%A7%AF%E7%9A%84%E9%97%B4%E6%8E%A5%E7%BB%8F%E6%B5%8E%E6%8D%9F%E5%A4%B1.jpg)
-
-## Model
-
-```python
-print("hello world")
-```
-
-
-## Examples
-
-```python
-from WorldOfMatrix_GPU4 import WorldOfMatrixGPU
+from clues_abm.WorldOfMatrix_GPU4 import WorldOfMatrixGPU
 import json
 import numpy as np
+import matplotlib.pyplot as plt
 
 # ======================= Load and initialize model =======================
 model = WorldOfMatrixGPU()
-with open("MRIOExample.json") as f:
+with open("data/MRIOExample.json") as f:
     MRIOdata = json.load(f)
 
 # Set simulation parameters
@@ -201,23 +165,22 @@ S0_ProductInNetwork_Region_Change_Mean = np.mean(S0_ProductInNetwork_Region_Chan
 
 
 # ======================= Save results =======================
-# np.savez("TestResults_ReductionInProductionCapacityExample.npz",
-#     S0_Evolution_ValueAdded_ProductionAgents = S0_Evolution_ValueAdded_ProductionAgents,
-#     S0_Evolution_ValueAdded_Region = S0_Evolution_ValueAdded_Region,
-#     S0_ProductInNetwork_Region = S0_ProductInNetwork_Region,
-#     S0_ProductInNetwork_Region_Change = S0_ProductInNetwork_Region_Change,
-#     S0_ProductInNetwork_Region_Change_Mean = S0_ProductInNetwork_Region_Change_Mean,
-#     S0_LossPerc_ProductionAgents = S0_LossPerc_ProductionAgents,
-#     S0_LossPerc_Region = S0_LossPerc_Region,
-#     S0_Evolution_Scarcity_RegionsProducts = S0_Evolution_Scarcity_RegionsProducts,
-#     SS_AgentsP_VA = SS_AgentsP_VA,
-#     SS_Region_VA = SS_Region_VA,
-#     SS_ProductInNetwork_Region = SS_ProductInNetwork_Region,
-#     RegionSectors2Regions = RegionSectors2Regions
-# )
+np.savez("output/TestResults_ReductionInProductionCapacityExample.npz",
+    S0_Evolution_ValueAdded_ProductionAgents = S0_Evolution_ValueAdded_ProductionAgents,
+    S0_Evolution_ValueAdded_Region = S0_Evolution_ValueAdded_Region,
+    S0_ProductInNetwork_Region = S0_ProductInNetwork_Region,
+    S0_ProductInNetwork_Region_Change = S0_ProductInNetwork_Region_Change,
+    S0_ProductInNetwork_Region_Change_Mean = S0_ProductInNetwork_Region_Change_Mean,
+    S0_LossPerc_ProductionAgents = S0_LossPerc_ProductionAgents,
+    S0_LossPerc_Region = S0_LossPerc_Region,
+    S0_Evolution_Scarcity_RegionsProducts = S0_Evolution_Scarcity_RegionsProducts,
+    SS_AgentsP_VA = SS_AgentsP_VA,
+    SS_Region_VA = SS_Region_VA,
+    SS_ProductInNetwork_Region = SS_ProductInNetwork_Region,
+    RegionSectors2Regions = RegionSectors2Regions
+)
 
 # ======================= Plot =======================
-import matplotlib.pyplot as plt
 # 每天的总 ValueAdded：对代理维度求和（axis=0 表示按行方向）
 daily_total = np.sum(S0_Evolution_ValueAdded_ProductionAgents, axis=0)
 
@@ -230,5 +193,3 @@ plt.title('Daily Total Value Added of Production Agents')
 plt.grid(True)
 plt.tight_layout()
 plt.show()
-
-```
