@@ -441,9 +441,9 @@ $$
 X^{cap} = \alpha \times (1 - \theta) \times \overline{X} \quad (3)
 $$
 
-where $alpha$ is overproduction capacity (the value is 1 by default); $`theta`$ is
+where $`\alpha`$ is overproduction capacity (the value is 1 by default); $`\theta`$ is
 the reduction in production capacity relative to pre-event level (the
-value is $`theta`$ by default); $`\overline{X}`$ is the production capacity at the
+value is $`\theta`$ by default); $`\overline{X}`$ is the production capacity at the
 pre-event level.
 
 **Production constraint.** The production constraint due to the
