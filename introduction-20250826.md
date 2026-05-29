@@ -8,7 +8,9 @@
 The CLUES ABM model (Climate-resilient & Low-carbon Unfolding Economic Scenarios – An Agent-Based Model) simulates the short-term impact of abrupt external shocks on an equilibrium economic–environmental system, containing the process of adaptation and mitigation of agents within the system. The model unfolds economic and environmental system changes over time, allowing high-temporal and spatial resolution simulations for short and medium-term periods. It couples global environmental changes with China's socio-economic system at a high spatial-temporal precision, simulating the diffusion of environmental risks, natural disasters, and policy changes. This model helps to assess economic and environmental impacts more accurately, identify risk nodes, and design adaptive policies.
 
 Figure 1 illustrates the simulation process of the CLUES-ABM model. Within a predefined world (such as China or globally), based on the supply-demand in the industrial chain, production agents and production/consumption agents transfer information or material via transportation agents. The transmission of material and information flows is determined by the initial world and the adaptive behavior of various agents, spreading and diffusing through the supply chain network.
+
 ![CLUES-ABM model schematic diagram](https://i-blog.csdnimg.cn/direct/76f743b097f04ca3b764e26f00b6c936.gif#pic_center)
+
 **To be supplemented: 1 link points to the second library**
 
 # 2. Function Introduction
@@ -216,3 +218,7 @@ $$
 X^{a} = \min \left\{ O^{tot}, X^{cap}, \min \left\{ X^{s^{\prime}} \right\}, \min \left\{ X^{r^{\prime}, s^{\prime}} \right\} \right\} \quad (1)
 $$
 
+
+```math
+X^{a} = \min \left\{ O^{tot}, X^{cap}, \min \left\{ X^{s^{\prime}} \right\}, \min \left\{ X^{r^{\prime}, s^{\prime}} \right\} \right\} \quad (1)
+```
