@@ -1,7 +1,7 @@
-from clues_abm.WorldOfMatrix_GPU4 import WorldOfMatrixGPU
 import json
 import numpy as np
 import matplotlib.pyplot as plt
+from clues_abm.WorldOfMatrix_GPU4 import WorldOfMatrixGPU
 
 # ======================= Load and initialize model =======================
 model = WorldOfMatrixGPU()
@@ -30,8 +30,8 @@ model.MRIO_Dist = 3 * np.ones((model.MRIO_R, model.MRIO_S), dtype=int)
 np.fill_diagonal(model.MRIO_Dist, 1)
 model.MRIO_Dist = model.MRIO_Dist - 1
 
-# Water intensity: placeholder
-model.AgentsP_WaterIntensity = np.ones((model.MRIO_R * model.MRIO_S,1))
+# Resource intensity: placeholder
+model.AgentsP_ResourceIntensity = np.ones((model.MRIO_R * model.MRIO_S,1))
 
 
 # Initialize

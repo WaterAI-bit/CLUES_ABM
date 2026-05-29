@@ -112,7 +112,7 @@ class WorldOfMatrixGPU:
         self.AgentsP_Xs = None # N_P*Sa: Possible production levels constrained by inventories of different products.
         self.AgentsP_Xa = None # N_P*1: Actual production.
         self.AgentsP_VA = None # N_P*1: Actual value added.
-        self.AgentsP_WaterIntensity = None # N_P*1: Water required for unitary output of each production agent.
+        self.AgentsP_ResourceIntensity = None # N_P*1: Water required for unitary output of each production agent.
         # Product Outflows: Each row represents an product sender, each column a product receiver.
         self.AgentsP_ProductOutP = None # N_P*N_P: Product sent toward different production agents (through transportation agents).
         self.AgentsP_ProductOutC = None # N_P*N_C: Product sent toward different consumption agents (through transportation agents).
@@ -281,7 +281,7 @@ class WorldOfMatrixGPU:
         # MRIO_R*N_P matrix that converts rows of region-sectors to rows of regions.
         self.Regions_Matrix = np.kron(np.eye(self.MRIO_R), np.ones((1, self.MRIO_S)))
         # MRIO_R*N_P matrix where each row contains the water intensities of the sectors in the corresponding region.
-        self.Regions_Matrix_WaterIntensity = self.Regions_Matrix * self.AgentsP_WaterIntensity.T
+        self.Regions_Matrix_WaterIntensity = self.Regions_Matrix * self.AgentsP_ResourceIntensity.T
         # Number of aggregated products.
         self.Sa = self.S2Sa.shape[1]
 
