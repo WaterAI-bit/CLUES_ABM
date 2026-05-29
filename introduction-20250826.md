@@ -863,7 +863,7 @@ $$
 ##### 5) Updating
 
 After unloading the cargo in the previous step, the cargo at each step
-of the transportation chain in $t+1$ is:
+of the transportation chain in $`t+1`$ is:
 
 $$
 Z_{t+1}( \cdot \mid \langle T \rangle^{\rightarrow \langle C \rangle}( r_{1}, s_{1}, r_{2} ) )
