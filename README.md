@@ -830,9 +830,9 @@ planned to be delivered to consumption agent `⟨C⟩(r₂)` in $t$.
 
 #### 3) Blockage (Optional, not in this study)
 
-If this transportation agent `⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)` has $b$ units of
-goods $s_1$ blocked at step $l$ ($l=1, 2, \ldots, L$), then unit $b$ of
-goods $s_1$ on step $l$ cannot be transported forward. If $b>0$, the
+If this transportation agent $`⟨T⟩^{\rightarrow \langle C \rangle}(r_1,s_1,r_2)`$ has $b$ units of
+goods $`s_1`$ blocked at step $`l$ ($l=1, 2, \ldots, L`$), then unit $b$ of
+goods $`s_1`$ on step $l$ cannot be transported forward. If $b>0$, the
 transportation chain is blocked; if $b=0$, the transportation chain is
 not blocked. Similar to the previous case, the relevant production flows
 must be adjusted:
@@ -865,7 +865,7 @@ Z_{t+1}( \cdot \mid \langle T \rangle^{\rightarrow \langle C \rangle}( r_{1}, s_
 $$
 
 Therefore, we have completed updating the transportation chain
-connecting the production agent $`⟨P⟩(r₁,s₁)`$ and the consumption agent
+connecting the production agent `⟨P⟩(r₁,s₁)` and the consumption agent
 `⟨C⟩(r₂)`.
 
 
