@@ -9,7 +9,14 @@ The CLUES ABM model (Climate-resilient & Low-carbon Unfolding Economic Scenarios
 
 Figure 1 illustrates the simulation process of the CLUES-ABM model. Within a predefined world (such as China or globally), based on the supply-demand in the industrial chain, production agents and production/consumption agents transfer information or material via transportation agents. The transmission of material and information flows is determined by the initial world and the adaptive behavior of various agents, spreading and diffusing through the supply chain network.
 
-![CLUES-ABM model schematic diagram](./figures/clues_abm_flow.gif)
+![CLUES-ABM model schematic diagram](https://github.com/WaterAI-bit/CLUES_ABM/blob/main/figures/clues_abm_flow.gif)
+
+
+![中国每日和累积的间接经济损失](https://github.com/WaterAI-bit/CLUES_ABM/blob/main/results/%E4%B8%AD%E5%9B%BD%E6%AF%8F%E6%97%A5%E5%92%8C%E7%B4%AF%E7%A7%AF%E7%9A%84%E9%97%B4%E6%8E%A5%E7%BB%8F%E6%B5%8E%E6%8D%9F%E5%A4%B1.jpg)
+
+
+
+
 
 **To be supplemented: 1 link points to the second library**
 
