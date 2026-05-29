@@ -26,7 +26,7 @@ network.
 
 <p align="center">
 
-<img src="https://github.com/WaterAI-bit/CLUES_ABM/raw/main/figures/clues_abm_flow.png" alt="CLUES-ABM model schematic diagram" width="60%"/>
+<img src="https://github.com/WaterAI-bit/CLUES_ABM/raw/main/docs/figures/clues_abm_flow.png" alt="CLUES-ABM model schematic diagram" width="60%"/>
 <br> <em>Figure 1: Schematic framework for the CLUES-ABM model.</em>
 
 </p>
