@@ -469,10 +469,10 @@ where $`I^{R}`$ is the required inventory level, $`n`$ is the target usage
 days for different products; $`X^{a}`$ is the actual production; a is the
 input requirement of raw materials for unitary production; $`X^{s'}`$ or
 $`X^{r', s'}`$ is possible production levels constrained by inventories of
-different products; $`I`$ is the current inventory level; $`Psi`$ is the ratio
+different products; $`I`$ is the current inventory level; $`\Psi`$ is the ratio
 of the required inventory level below which the production agent would
 use only part of the inventory in order to smooth production between
-simulation steps (the value of $`Psi`$ is 0 by default).
+simulation steps (the value of $`\Psi`$ is 0 by default).
 
 ### 5.1.2 Sending out products onto transportation chains to other agents
 
@@ -513,11 +513,11 @@ $$
 I_{t}(s') = I_{t-1}(s') - X_{t-1}^{a} \times a_{t-1}(s') + \sum Z^{\leftarrow \langle P \rangle}(r', s') \quad (8)
 $$
 
-where $`I_t(s')`$ is the inventory of `s'` for the production agent in
-period `t`; `I_(t-1)(s')` is the inventory of `s'` for the production
-agent in period `t-1`; `X_(t-1)^(a)` is the actual production in `t-1`;
-`a_(t-1)(s')` is the input requirement of `s'` for unit production in
-`t-1`; `Z^(←⟨P⟩)` denotes the product inflows from production agents in
+where $`I_{t}(s')`$ is the inventory of $`s'`$ for the production agent in
+period $`t`$; `$I_{t-1}(s')`$ is the inventory of $`s'`$ for the production
+agent in period $`t-1`$; $`X_{t-1}^{a}`$ is the actual production in $`t-1`$;
+$`a_{t-1}(s')`$ is the input requirement of $`s'`$ for unit production in
+$`t-1`$; $`Z^{\leftarrow \langle P \rangle}`$ denotes the product inflows from production agents in
 different regions.
 
 When the target inventory, defined in equation (9), is greater than the
@@ -533,17 +533,17 @@ $$
 O^{\rightarrow \langle P \rangle}(s') = a(s') \times X^{a} + \bigl( I^{T}(s') - I(s') \bigr) \times \frac{\Delta t}{\tau_{I}} \quad (10)
 $$
 
-where `I^(T)(s')` is the target inventory; `O^(→⟨P⟩)` is orders sent
-toward different production agents; `Δt` is the time length of each
-simulation step (e.g., one day); `τ_(I)` is the timescale for adjusting
+where $`I^{T}(s')`$ is the target inventory; $`O^{\rightarrow \langle P \rangle}`$ is orders sent
+toward different production agents; $`\Delta t`$ is the time length of each
+simulation step (e.g., one day); $`\tau_{I}`$ is the timescale for adjusting
 to targeted inventory levels.
 
 ### 5.1.4 Adjusting upstream suppliers to alleviate the shortage of intermediate products
 
-The order shares of a homogeneous intermediate product `s'` given to
+The order shares of a homogeneous intermediate product $`s'`$ given to
 connected suppliers in different regions can be adjusted in each period,
-according to the difference between the share of product `s'` sent by a
-particular supplier in the total product `s'` sent by all suppliers and
+according to the difference between the share of product $`s'`$ sent by a
+particular supplier in the total product $`s'`$ sent by all suppliers and
 the previous order share of this supplier. Intuitively, if a supplier
 provided fewer raw materials than the order given to it in the previous
 period, the order share given to it in this period will decrease.
@@ -552,29 +552,29 @@ $$
 o_{t}^{\rightarrow \langle P \rangle}(r',s') = o_{t - 1}^{\rightarrow \langle P \rangle}(r',s') + \left( \frac{Z^{\rightarrow \langle P \rangle}(r,s|\langle P \rangle(r',s'))}{\sum_{r'}{Z^{\rightarrow \langle P \rangle}(r,s|\langle P \rangle(r',s'))}} - \frac{O_{t - 1}^{\rightarrow \langle P \rangle}(r',s')}{O_{t - 1}^{\rightarrow \langle P \rangle}(s')} \right) \times \frac{\Delta t}{\tau_{O}} \quad (11)
 $$
 
-where `Z^(→⟨P⟩)(r,s|⟨P⟩(r',s'))` denotes the product sent (toward the
-production agent `⟨P⟩(r,s)` in consideration) by production agent
-`⟨P⟩(r',s')`; `o_(t)^(→⟨P⟩)(r',s')` denotes the share of order for
-intermediate product `s'` sent toward the supplier in region `r'` in the
-current time period `t`; `τ_(O)` denotes the timescale for adjusting to
+where $`Z^{\rightarrow \langle P \rangle}(r,s \mid \langle P \rangle(r',s'))`$ denotes the product sent (toward the
+production agent $`\langle P \rangle(r,s)`$ in consideration) by production agent
+$`\langle P \rangle(r',s')`$; $`o_{t}^{\rightarrow \langle P \rangle}(r',s')`$ denotes the share of order for
+intermediate product $`s'`$ sent toward the supplier in region $`r'`$ in the
+current time period $`t`$; $`tau_{O}`$ denotes the timescale for adjusting to
 the target order distribution.
 
-Therefore, the order to the supplier in the region `r'` is
+Therefore, the order to the supplier in the region $`r'`$ is
 
 $$
 O^{\rightarrow \langle P \rangle}(r',s') = O^{\rightarrow \langle P \rangle}(s') \times o^{\rightarrow \langle P \rangle}(r',s') \quad (12)
 $$
 
-where `O^(→⟨P⟩)(s')` is the total order for the intermediate product
-`s'` determined in equation (10).
+where $`O^{\rightarrow \langle P \rangle}(s')`$ is the total order for the intermediate product
+$`s'`$ determined in equation (10).
 
 ### 5.1.5 Using overproduction capacity to ensure product supply
 
 If the actual production level is smaller than the total order received,
-i.e., `X^(a) < O^(tot)`, there is a scarcity. In this case, the
+i.e., $`X^{a} < O^{tot}`$, there is a scarcity. In this case, the
 production agent will gradually utilize idle production capacities
 (i.e., overproduction capacity) to increase supply. If
-`X^(a) = O^(tot)`, there is no scarcity. The production agent will
+$`X^{a} = O^{tot}`$, there is no scarcity. The production agent will
 gradually reduce the overproduction capacity parameter α toward 1.
 
 $$
@@ -586,17 +586,17 @@ $$
 \quad (13)
 $$
 
-where `α^(max)` denotes the maximum possible overproduction capacity
-(with the default value of 1.2); `τ_(α)` is the timescale for adjusting
+where $`α^{max}`$ denotes the maximum possible overproduction capacity
+(with the default value of 1.2); $`\tau_α`$ is the timescale for adjusting
 to maximum production capacity.
 
 ### 5.1.6 Adjusting production technology to meet the shortage of intermediate products
 
 **Case of scarcity.** Faced with a shortage of an intermediate product,
 the production agent will gradually reduce the requirement for it to a
-certain degree. For the intermediate product `s'`, if equation (14) is
+certain degree. For the intermediate product $`s'`$, if equation (14) is
 satisfied, the production agent detects a shortage. Thus, the production
-agent sees a shortage if the total amount of `s'` sent by all the
+agent sees a shortage if the total amount of $`s'`$ sent by all the
 connected suppliers falls short of the previous total order. In this
 case, it will update intermediate requirements for unitary production
 (i.e., adjusting production technology) as described in equation (15).
@@ -609,16 +609,16 @@ $$
 a_{t}(s') = a_{t - 1}(s') - \frac{O_{t - 1}^{\rightarrow \langle P \rangle}(s') - Z^{\rightarrow \langle P \rangle}(r,s|\langle P \rangle(s'))}{O_{t - 1}^{\rightarrow \langle P \rangle}(s')} \times a_{t - 1}(s') \times \frac{\Delta t}{\tau_{A}^{\downarrow}} \quad (15)
 $$
 
-where `Z^(→⟨P⟩)(r,s|⟨P⟩(s'))` denotes the product sent (toward the
-production agent `⟨P⟩(r,s)` in consideration) by all connected suppliers
-and `O_(t-1)^(→⟨P⟩)(s')` is the total order for `s'` sent in the
-previous simulation period; `a_(t)(s')` denotes the intermediate
-requirement of `s'` for unitary production and `τ_(A)^(↓)` is the
+where $`Z^{\rightarrow \langle P \rangle}(r,s \mid \rightarrow \langle P \rangle(s'))`$ denotes the product sent (toward the
+production agent $`\langle P \rangle(r,s)`$ in consideration) by all connected suppliers
+and $`O_{t-1}^{\rightarrow \langle P \rangle}(s')`$ is the total order for $`s'`$ sent in the
+previous simulation period; $`a_t(s')`$ denotes the intermediate
+requirement of $`s'`$ for unitary production and $`\tau_A^ \downarrow`$ is the
 timescale parameter of this adjustment.
 
 **Case of no scarcity.** If equation (16) is satisfied, there is no
-scarcity of intermediate product `s'`. This means the total amount of
-`s'` sent by all the connected suppliers satisfies the previous total
+scarcity of intermediate product $`s'`$. This means the total amount of
+$`s'`$ sent by all the connected suppliers satisfies the previous total
 order. Then the requirement of s' for unitary production will shift back
 towards the original value in the steady state as described in equation
 (17).
@@ -631,7 +631,7 @@ $$
 a_{t}(s') = a_{t - 1}(s') + \frac{\overline{a}(s') - a_{t - 1}(s')}{\overline{a}(s')} \times \bigl( \overline{a}(s') - a_{t - 1}(s') \bigr) \times \frac{\Delta t}{\tau_{A}^{\uparrow}} \quad (17)
 $$
 
-where `τ_(A)^(↑)` is the timescale for this technology adaptation and
+where $`\tau_A^ \uparrow`$ is the timescale for this technology adaptation and
 $\overline{a}(s')$ is the input requirement for unitary production in a
 steady state.
 
@@ -648,17 +648,17 @@ decreased/increased requirements for scarce intermediate inputs.
 ### 5.1.7 Post-disaster reconstruction (gradual restoration of production capacity)
 
 If the production agent suffers from an external shock resulting in the
-reduction of production capacity (with `θ` representing the ratio of
+reduction of production capacity (with $`\theta`$ representing the ratio of
 loss), after the event, it will slowly restore the capacity through
-reconstruction until the `θ` becomes 0. Therefore, the production agent
+reconstruction until the $`\theta`$ becomes 0. Therefore, the production agent
 will gradually recover after an external shock (such as a disaster) and
-the speed is governed by the timescale parameter `τ_(θ)`.
+the speed is governed by the timescale parameter $`\tau_\theta`$.
 
 $$
 \theta_{t + 1} = \bigl( 1 - \frac{\Delta t}{\tau_{\theta}} \bigr) \times \theta_{t} \quad (19)
 $$
 
-where `θ` is the ratio of loss and `τ_(θ)` is the timescale for
+where $`\theta`$ is the ratio of loss and $`\tau_\theta`$ is the timescale for
 reconstruction.
 
 #### 8) Record key state variables
@@ -668,7 +668,7 @@ simulation period, which will be used in computations in future periods.
 
 ## 5.2 Consumption agent
 
-***Consumption agent*** `⟨C⟩(r)` consumes products s' = 1, 2, ⋯, S in
+***Consumption agent*** $`\langle C \rangle(r)`$ consumes products $`s' = 1, 2, \dot, S`$ in
 each simulation period. To do this, it must send orders to different
 suppliers and adjust these orders according to the actual supply
 fluctuations. Specifically, the consumption agent acts in the following
@@ -677,9 +677,9 @@ ways.
 ### 5.2.1 Sending order outflows
 
 In a simulation period, the order shares (for a homogeneous product
-`s'`) given to producers in different regions will be adjusted according
+$`s'`$) given to producers in different regions will be adjusted according
 to the difference between the share of product s' sent by a particular
-supplier in the total product `s'` sent by all suppliers and the
+supplier in the total product $`s'`$ sent by all suppliers and the
 previous order share of this supplier. Intuitively, if a supplier
 provided fewer products than the order given to it in the previous
 period, the order share given to it in this period will decrease.
@@ -688,22 +688,22 @@ $$
 o_{t}^{\rightarrow \langle P \rangle}(r',s') = o_{t - 1}^{\rightarrow \langle P \rangle}(r',s') + \left( \frac{Z^{\rightarrow \langle C \rangle}(r,s|\langle P \rangle(r', s'))}{\sum_{r'}{Z^{\rightarrow \langle C \rangle}(r,s|\langle P \rangle(r', s'))}} - \frac{O_{t - 1}^{\rightarrow \langle P \rangle}(r', s')}{O_{t - 1}^{\rightarrow \langle P \rangle}(s')} \right) \times \frac{\Delta t}{\tau_{O}} \quad (20)
 $$
 
-where `Z^(→⟨C⟩)(r,s|⟨P⟩(r', s'))` denotes the product sent toward the
-consumption agent `⟨C⟩(r)` in consideration by production agent
-`⟨P⟩(r',s')`; `o_(t)^(→⟨P⟩)(r',s')` denotes the share of order for
-product `s'` sent toward the connected supplier in region `r'` in the
-simulation period `t`; `τ_(O)` denotes the timescale for adjusting to
+where $`Z^{\rightarrow \langle C \rangle}(r,s \mid \langle P \rangle(r', s'))`$ denotes the product sent toward the
+consumption agent $`\langle C \rangle(r)`$ in consideration by production agent
+$`\langle P \rangle(r',s')`$; $`o_t^{\rightarrow \langle P \rangle}(r',s')`$ denotes the share of order for
+product `s'` sent toward the connected supplier in region $`r'`$ in the
+simulation period $`t`$; $`\tau_O`$ denotes the timescale for adjusting to
 the target order distribution.
 
 Therefore, the consumption agent sends orders to all connected suppliers
-for `s'` in different regions:
+for $`s'`$ in different regions:
 
 $$
 O^{\rightarrow \langle P \rangle}(r', s')= O^{\rightarrow \langle P \rangle}(s') \times o^{\rightarrow \langle P \rangle}(r', s') \quad (21)
 $$
 
-where `O^(→⟨P⟩)(s')` is the total order for this homogeneous product
-`s'`, which is determined by the steady-state consumption level.
+where $`O^{\rightarrow \langle P \rangle}(s')`$ is the total order for this homogeneous product
+$`s'`$, which is determined by the steady-state consumption level.
 
 ### 5.2.2 Record key state variables
 
@@ -730,10 +730,10 @@ different agents. Below we express the above image mathematically.
 
 #### 1) Transportation chain between production agents
 
-`⟨T⟩^(→⟨P⟩)(r₁,s₁,r₂,s₂)` delivers the cargo produced by the production
-agent in `⟨P⟩(r₁,s₁)` to the production agent in `⟨P⟩(r₂,s₂)`. The
+$`\langle T \rangle^{\rightarrow \langle P \rangle}(r_1,s_1,r_2,s_2)`$ delivers the cargo produced by the production
+agent in $`\langle P \rangle(r_1,s_1)`$ to the production agent in $`\langle P \rangle(r_2,s_2)`$. The
 length of the transportation chain is L and the cargo at each step of
-the transportation chain in period `t` is
+the transportation chain in period $`t`$ is
 
 $$
 Z_{t}(\cdot \mid \langle T \rangle^{\rightarrow \langle P \rangle}(r_1,s_1,r_2,s_2)) \equiv (Z_{1,t}, Z_{2,t}, \cdots, Z_{L,t}) \quad (22)
@@ -741,7 +741,7 @@ $$
 
 #### 2) Loading
 
-In the period of $t+1$, the cargo is loaded to the transportation agent.
+In the period of $`t+1`$, the cargo is loaded to the transportation agent.
 
 $$
 \begin{aligned}
@@ -752,13 +752,13 @@ $$
 $$
 
 where
-$Z_{t}^{\rightarrow \langle P \rangle}(r_2,s_2 \mid \langle P \rangle(r_1,s_1))$
-represents the cargo produced by `⟨P⟩(r₁,s₁)` and planned to be
-delivered to `⟨P⟩(r₂,s₂)` in $t$.
+$`Z_{t}^{\rightarrow \langle P \rangle}(r_2,s_2 \mid \langle P \rangle(r_1,s_1))`$
+represents the cargo produced by $`\langle P \rangle(r_1,s_1)`$ and planned to be
+delivered to $`\langle P \rangle(r_2,s_2)`$ in $t$.
 
 #### 3) Blockage (optional, not in this study)
 
-If this transportation agent `⟨T⟩^(→⟨P⟩)(r₁,s₁,r₂,s₂)` has $b$ units of
+If this transportation agent $`\langle T \rangle^{\rightarrow \langle P \rangle}(r_1,s_1,r_2,s_2)`$ has $b$ units of
 goods $s_1$ blocked at step $l$ ($l=1,2,\ldots,L$), then unit $b$ of
 goods $s_1$ on step $l$ cannot be transported forward as modeled in
 equation (23) due to this blockage. If $b>0$, the transportation chain
@@ -777,7 +777,7 @@ $$
 #### 4) Unloading
 
 The cargo in the last step $L+1$ of transportation chain is unloaded to
-`⟨P⟩(r₂,s₂)` in simulation period $t$:
+$`\langle P \rangle(r_2,s_2)`$ in simulation period $t$:
 
 $$
 Z_{t}^{\leftarrow \langle P \rangle}( r_{1}, s_{1} \mid \langle P \rangle( r_{2}, s_{2} ) ) = \widetilde{\widetilde{Z}}_{L+1,t+1} \quad (25)
@@ -794,7 +794,7 @@ Z_{t+1}(\cdot \mid \langle T \rangle^{\rightarrow \langle P \rangle}( r_{1}, s_{
 $$
 
 Therefore, we have completed updating the transportation chain
-connecting the two production agents `⟨P⟩(r₁,s₁)` and `⟨P⟩(r₂,s₂)`.
+connecting the two production agents $`\langle P \rangle(r_1,s_1)`$ and $`\langle P \rangle(r_2,s_2)`$.
 
 
 
@@ -802,8 +802,8 @@ connecting the two production agents `⟨P⟩(r₁,s₁)` and `⟨P⟩(r₂,s₂
 
 #### 1) Transportation agent between production agent and consumption agents
 
-`⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)` delivers the cargo produced by the production
-agent in `⟨P⟩(r₁,s₁)` to the consumption agent in `⟨C⟩(r₂)`. The length
+$`\langle T \rangle^{\rightarrow \langle C \rangle}(r_1,s_1,r_2)`$ delivers the cargo produced by the production
+agent in $`\langle P \rangle(r_1,s_1)`$ to the consumption agent in $`\langle C \rangle(r_2)`$. The length
 of the transportation agent is $L$, and the cargo at each step of the
 transportation agent in $t$ is:
 
@@ -825,8 +825,8 @@ $$
 
 where
 $`Z_{t}^{\rightarrow \langle C \rangle}(r_2 \mid \langle P \rangle(r_1,s_1))`$
-represents the cargo produced by production agent `⟨P⟩(r₁,s₁)` and
-planned to be delivered to consumption agent `⟨C⟩(r₂)` in $t$.
+represents the cargo produced by production agent $`\langle P \rangle(r_1,s_1)`$ and
+planned to be delivered to consumption agent $`\langle C \rangle(r_2)`$ in $t$.
 
 #### 3) Blockage (Optional, not in this study)
 
@@ -848,7 +848,7 @@ $$
 #### 4) Unloading
 
 The cargo on the last step $L+1$ of the transportation chain is unloaded
-to the target consumption agent $`⟨C⟩(r_2)`$ in simulation period $t$:
+to the target consumption agent $`\langle C \rangle(r_2)`$ in simulation period $t$:
 
 $$
 Z_{t}^{\leftarrow \langle P \rangle}( r_{1}, s_{1} \mid \langle C \rangle( r_{2} ) ) = \widetilde{\widetilde{Z}}_{L+1,t+1} \quad (30)
@@ -865,8 +865,8 @@ Z_{t+1}( \cdot \mid \langle T \rangle^{\rightarrow \langle C \rangle}( r_{1}, s_
 $$
 
 Therefore, we have completed updating the transportation chain
-connecting the production agent $`⟨P⟩(r_1,s_1)`$ and the consumption agent
-$`⟨C⟩(r_2)`$.
+connecting the production agent $`\langle P \rangle(r_1,s_1)`$ and the consumption agent
+$`\langle C \rangle(r_2)`$.
 
 
 
