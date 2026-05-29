@@ -11,39 +11,33 @@ Figure 1 illustrates the simulation process of the CLUES-ABM model. Within a pre
 
 ![CLUES-ABM model schematic diagram](https://github.com/WaterAI-bit/CLUES_ABM/raw/main/figures/clues_abm_flow.png)
 
-
-![中国每日和累积的间接经济损失](https://github.com/WaterAI-bit/CLUES_ABM/raw/main/results/%E4%B8%AD%E5%9B%BD%E6%AF%8F%E6%97%A5%E5%92%8C%E7%B4%AF%E7%A7%AF%E7%9A%84%E9%97%B4%E6%8E%A5%E7%BB%8F%E6%B5%8E%E6%8D%9F%E5%A4%B1.jpg)
-
-
-
-
-
 **To be supplemented: 1 link points to the second library**
 
 # 2. Function Introduction
 The platform constructs an economic system model based on the interacting adaptive subjects in the industrial network. Through the integration of multi-source data, subject behavior rules and parallel computing technology，The platform is able to simulate the diffusion process of environmental risks, natural disasters, policy adjustments and other sudden events** in the economic system at a **high spatial and temporal resolution**, and to identify risk nodes and key transmission paths. Compared with traditional models, the platform can better reflect the real adaptive behavior and complexity characteristics of economic agents, thus providing a scientific basis for policy formulation.
 
 
-**Application**：
+**Application**:
 
-(1) **Climate Change and Disaster Response** - Forecasting the impact of typhoons, floods, droughts and other disasters on the industrial chain and regional economy, and assessing the effects of emergency dispatch and recovery programs.<br>
-(2) **Green Transformation and Emission Reduction Policy Evaluation** - simulate the impact of carbon tax, emission trading and other policies on industrial structure and enterprise adaptation behavior, and optimize the green transformation path.<br>
-(3) **Public Health and Emergency Management** - analyze the dynamic impacts of epidemics and other public emergencies on production, logistics, and trade, and formulate collaborative response strategies.<br>
-(4) **Macroeconomic Risk Early Warning** - Construct a "sensing system" for environmental and economic risks to support risk prevention, resilience enhancement and cross-sectoral collaborative governance.<br>
+(1) **Climate Change and Disaster Response** - Forecasting the impact of typhoons, floods, droughts and other disasters on the industrial chain and regional economy, and assessing the effects of emergency dispatch and recovery programs.
+(2) **Green Transformation and Emission Reduction Policy Evaluation** - simulate the impact of carbon tax, emission trading and other policies on industrial structure and enterprise adaptation behavior, and optimize the green transformation path.
+(3) **Public Health and Emergency Management** - analyze the dynamic impacts of epidemics and other public emergencies on production, logistics, and trade, and formulate collaborative response strategies.
+(4) **Macroeconomic Risk Early Warning** - Construct a "sensing system" for environmental and economic risks to support risk prevention, resilience enhancement and cross-sectoral collaborative governance.
 
 The platform can be used as an important tool for scientific research, governmental decision-making and corporate strategic analysis, and provides support for enhancing the adaptability and sustainability of China's socio-economic systems in the face of environmental change.
 
-**Publications**：<br>
-1，Qi Zhou, Shen Qu, Miaomiao Liu, Jianxun Yang, Jia Zhou, Yunlei She, Zhouyi Liu, Jun Bi, Enhancing the Efficiency of Enterprise Shutdowns for Environmental Protection: An Agent-Based Modeling Approach with High Spatial–Temporal Resolution Data, *Engineering*, **https://doi.org/10.1016/j.eng.2024.02.006**<br>
-2，Wen Wen, Yang Su, Ying-er Tang, Xingman Zhang, Yuchen Hu, Yawen Ben, Shen Qu, Evaluating carbon emissions reduction compliance based on 'dual control' policies of energy consumption and carbon emissions in China, *Journal of Environmental Management*, **https://doi.org/10.1016/j.jenvman.2024.121990**.<br>
+**Publications**:
+
+1，Qi Zhou, Shen Qu, Miaomiao Liu, Jianxun Yang, Jia Zhou, Yunlei She, Zhouyi Liu, Jun Bi, Enhancing the Efficiency of Enterprise Shutdowns for Environmental Protection: An Agent-Based Modeling Approach with High Spatial–Temporal Resolution Data, *Engineering*, **https://doi.org/10.1016/j.eng.2024.02.006**
+2，Wen Wen, Yang Su, Ying-er Tang, Xingman Zhang, Yuchen Hu, Yawen Ben, Shen Qu, Evaluating carbon emissions reduction compliance based on 'dual control' policies of energy consumption and carbon emissions in China, *Journal of Environmental Management*, **https://doi.org/10.1016/j.jenvman.2024.121990**.
 3，Qianzi Wang, Qi Zhou, Jin Lin, Sen Guo, Yunlei She, Shen Qu,
-Risk assessment of power outages to inter-regional supply chain networks in China, *Applied Energy*, **https://doi.org/10.1016/j.apenergy.2023.122100**.<br>
-4，Liping Wang, Zhouyi Liu, Yunlei She, Yiyi Cao, Mimi Gong, Meng Wang, Shen Qu. Exploring the network structure of virtual water trade among China's cities. *Journal of Environmental Management* 2025, 388 , 125968. https://doi.org/10.1016/j.jenvman.2025.125968 <br>
-5，Y She, J Chen, Q Zhou, L Wang, K Duan, R Wang , Evaluating losses from water scarcity and benefits of water conservation measures to intercity supply chains in China，*Environmental science & technology*, 2024<br>
+Risk assessment of power outages to inter-regional supply chain networks in China, *Applied Energy*, **https://doi.org/10.1016/j.apenergy.2023.122100**.
+4，Liping Wang, Zhouyi Liu, Yunlei She, Yiyi Cao, Mimi Gong, Meng Wang, Shen Qu. Exploring the network structure of virtual water trade among China's cities. *Journal of Environmental Management* 2025, 388 , 125968. https://doi.org/10.1016/j.jenvman.2025.125968 
+5，Y She, J Chen, Q Zhou, L Wang, K Duan, R Wang , Evaluating losses from water scarcity and benefits of water conservation measures to intercity supply chains in China，*Environmental science & technology*, 2024.
 6，Yiyi Cao, Yunlei She, Qianzi Wang, Jin Lin, Weiming Chen, Shen Qu, Zhouyi Liu,
-Redefining virtual water allocation in China based on economic welfare gains from environmental externalities, *Journal of Cleaner Production*, **https://doi.org/10.1016/j.jclepro.2023.140243**.<br>
+Redefining virtual water allocation in China based on economic welfare gains from environmental externalities, *Journal of Cleaner Production*, **https://doi.org/10.1016/j.jclepro.2023.140243**.
 7，Kun Zhang, Yiyi Cao, Zhouyi Liu, Qi Zhou, Shen Qu, Yi-Ming Wei,
-Allocation of carbon emission responsibility among Chinese cities guided by economic welfare gains: Case study based on multi-regional input-output analysis, Applied *Energy*, **https://doi.org/10.1016/j.apenergy.2024.124252.**<br>
+Allocation of carbon emission responsibility among Chinese cities guided by economic welfare gains: Case study based on multi-regional input-output analysis, Applied *Energy*, **https://doi.org/10.1016/j.apenergy.2024.124252.**
 ...
 
 # 3. Quick Start
