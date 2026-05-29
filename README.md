@@ -381,10 +381,14 @@ sectors in each region. Each region-sector is represented by a
 production agent $`\langle P \rangle (r, s)`$. The final consumption in each region is
 represented by a consumption agent $`\langle C \rangle (r)`$. The transportation agent
 from production agents $`\langle P \rangle (r_1, s_1)`$ to $`\langle P \rangle (r_2, s_2)`$ is
-$`\langle T \langle ^(\rightarrow \langle P \langle)(r_1,s_1,r_2,s_2)`$, shipping the relevant intermediate product,
+$`\langle T \rangle ^{(\rightarrow \langle P \langle)}(r_1,s_1,r_2,s_2)`$, shipping the relevant intermediate product,
 and the transportation agent from the production agent $`\langle P \rangle (r_1,s_1)`$ to
-the consumption agent $`\langle C \langle(r_2)`$ is $` \langle T \langle ^(\rightarrow \langle C \langle)(r_1,s_1,r_2)`$, shipping the
+the consumption agent $`\langle C \rangle(r_2)`$ is $` \langle T \rangle ^{(\rightarrow \langle C \langle)}(r_1,s_1,r_2)`$, shipping the
 final product to consumers in region $`r_2`$.
+
+
+$`Z_{t}^{\rightarrow \langle C \rangle}(r_2 \mid \langle P \rangle(r_1,s_1))`$
+
 
 The specific behaviors and corresponding micro-foundations of the these
 agents including production agents, consumption agents, and
