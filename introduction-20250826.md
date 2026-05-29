@@ -20,29 +20,36 @@ The platform constructs an economic system model based on the interacting adapti
 **Application**:
 
 (1) **Climate Change and Disaster Response** - Forecasting the impact of typhoons, floods, droughts and other disasters on the industrial chain and regional economy, and assessing the effects of emergency dispatch and recovery programs.
+
 (2) **Green Transformation and Emission Reduction Policy Evaluation** - simulate the impact of carbon tax, emission trading and other policies on industrial structure and enterprise adaptation behavior, and optimize the green transformation path.
+
 (3) **Public Health and Emergency Management** - analyze the dynamic impacts of epidemics and other public emergencies on production, logistics, and trade, and formulate collaborative response strategies.
+
 (4) **Macroeconomic Risk Early Warning** - Construct a "sensing system" for environmental and economic risks to support risk prevention, resilience enhancement and cross-sectoral collaborative governance.
 
 The platform can be used as an important tool for scientific research, governmental decision-making and corporate strategic analysis, and provides support for enhancing the adaptability and sustainability of China's socio-economic systems in the face of environmental change.
 
 **Publications**:
 
-1，Qi Zhou, Shen Qu, Miaomiao Liu, Jianxun Yang, Jia Zhou, Yunlei She, Zhouyi Liu, Jun Bi, Enhancing the Efficiency of Enterprise Shutdowns for Environmental Protection: An Agent-Based Modeling Approach with High Spatial–Temporal Resolution Data, *Engineering*, **https://doi.org/10.1016/j.eng.2024.02.006**
-2，Wen Wen, Yang Su, Ying-er Tang, Xingman Zhang, Yuchen Hu, Yawen Ben, Shen Qu, Evaluating carbon emissions reduction compliance based on 'dual control' policies of energy consumption and carbon emissions in China, *Journal of Environmental Management*, **https://doi.org/10.1016/j.jenvman.2024.121990**.
-3，Qianzi Wang, Qi Zhou, Jin Lin, Sen Guo, Yunlei She, Shen Qu,
-Risk assessment of power outages to inter-regional supply chain networks in China, *Applied Energy*, **https://doi.org/10.1016/j.apenergy.2023.122100**.
-4，Liping Wang, Zhouyi Liu, Yunlei She, Yiyi Cao, Mimi Gong, Meng Wang, Shen Qu. Exploring the network structure of virtual water trade among China's cities. *Journal of Environmental Management* 2025, 388 , 125968. https://doi.org/10.1016/j.jenvman.2025.125968 
-5，Y She, J Chen, Q Zhou, L Wang, K Duan, R Wang , Evaluating losses from water scarcity and benefits of water conservation measures to intercity supply chains in China，*Environmental science & technology*, 2024.
-6，Yiyi Cao, Yunlei She, Qianzi Wang, Jin Lin, Weiming Chen, Shen Qu, Zhouyi Liu,
-Redefining virtual water allocation in China based on economic welfare gains from environmental externalities, *Journal of Cleaner Production*, **https://doi.org/10.1016/j.jclepro.2023.140243**.
-7，Kun Zhang, Yiyi Cao, Zhouyi Liu, Qi Zhou, Shen Qu, Yi-Ming Wei,
-Allocation of carbon emission responsibility among Chinese cities guided by economic welfare gains: Case study based on multi-regional input-output analysis, Applied *Energy*, **https://doi.org/10.1016/j.apenergy.2024.124252.**
+1，Qi Zhou, Shen Qu, Miaomiao Liu, Jianxun Yang, Jia Zhou, Yunlei She, Zhouyi Liu, Jun Bi. Enhancing the Efficiency of Enterprise Shutdowns for Environmental Protection: An Agent-Based Modeling Approach with High Spatial–Temporal Resolution Data, *Engineering*, 2024, 42: 295-307.
+
+2，Wen Wen, Yang Su, Ying-er Tang, Xingman Zhang, Yuchen Hu, Yawen Ben, Shen Qu. Evaluating carbon emissions reduction compliance based on 'dual control' policies of energy consumption and carbon emissions in China, *Journal of Environmental Management*, 2024, 367: 121990.
+
+3，Qianzi Wang, Qi Zhou, Jin Lin, Sen Guo, Yunlei She, Shen Qu. Risk assessment of power outages to inter-regional supply chain networks in China, *Applied Energy*, 2023, 353: 122100.
+
+4，Liping Wang, Zhouyi Liu, Yunlei She, Yiyi Cao, Mimi Gong, Meng Wang, Shen Qu. Exploring the network structure of virtual water trade among China's cities. *Journal of Environmental Management* 2025, 388, 125968.
+
+5，Yunlei She, Jiayang Chen, Qi Zhou, Liping Wang, Kai Duan, Ranran Wang, Shen Qu. Evaluating losses from water scarcity and benefits of water conservation measures to intercity supply chains in China，*Environmental science & technology*, 2024, 58(2): 1119-1130.
+
+6，Yiyi Cao, Yunlei She, Qianzi Wang, Jin Lin, Weiming Chen, Shen Qu, Zhouyi Liu. Redefining virtual water allocation in China based on economic welfare gains from environmental externalities, *Journal of Cleaner Production*, 2024, 434: 140243.
+
+7，Kun Zhang, Yiyi Cao, Zhouyi Liu, Qi Zhou, Shen Qu, Yi-Ming Wei. Allocation of carbon emission responsibility among Chinese cities guided by economic welfare gains: Case study based on multi-regional input-output analysis, *Applied Energy*,2024, 376: 124252.
+
 ...
 
 # 3. Quick Start
 ## 3.1 Environmental Preparation
-  •	  Python ≥ 3.9（Recommend 3.9–3.11）
+  •	  Python ≥ 3.9 (Recommend 3.9–3.11)
   •	  Recommended for virtual environments（```conda```or ```venv```）
 
 The code is as follows：
@@ -53,12 +60,46 @@ conda create -n clues-abm python=3.10 -y && conda activate clues-abm
 # Or
 python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
 ```
-安装依赖：
+
+Install Dependencies:
 ```c
 pip install solara numpy matplotlib
 #If the repository has requirements.txt：
 pip install -r requirements.txt
 ```
+
+
+
+# 3. Quick Start
+
+## 3.1 Environmental Preparation
+
+* Python ≥ 3.9 (Recommend 3.9–3.11)
+* Recommended for virtual environments ( `conda` or `venv` )
+
+The code is as follows:
+
+```bash
+# Create a virtual environment (either one)
+conda create -n clues-abm python=3.10 -y && conda activate clues-abm
+# Or
+python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
+```
+
+Install Dependencies:
+
+```bash
+pip install solara numpy matplotlib
+# If the repository has requirements.txt:
+pip install -r requirements.txt
+```
+
+
+
+
+
+
+
 ## 3.2 Get Code
 The code is as follows：
 ```c
