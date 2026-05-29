@@ -36,7 +36,7 @@ The platform constructs an economic system model based on the interacting adapti
 The platform can be used as an important tool for scientific research, governmental decision-making and corporate strategic analysis, and provides support for enhancing the adaptability and sustainability of China's socio-economic systems in the face of environmental change.
 
 
-
+## 2.3 Selected Publications
 
 Below is a curated list of research articles demonstrating the validation, application, and methodology of the CLUES-ABM framework in leading academic journals.
 
@@ -53,21 +53,6 @@ Below is a curated list of research articles demonstrating the validation, appli
 7. Kun Zhang, Yiyi Cao, Zhouyi Liu, **Qi Zhou**, Shen Qu, Yi-Ming Wei. Allocation of carbon emission responsibility among Chinese cities guided by economic welfare gains: Case study based on multi-regional input-output analysis, *Applied Energy*, 2024, 376: 124252. [https://doi.org/10.1016/j.apenergy.2024.124252](https://doi.org/10.1016/j.apenergy.2024.124252)
 
 </details>
-
-
-
-
-## 2.3 Selected Publications
-
-1. Qi Zhou, Shen Qu, Miaomiao Liu, Jianxun Yang, Jia Zhou, Yunlei She, Zhouyi Liu, Jun Bi. Enhancing the Efficiency of Enterprise Shutdowns for Environmental Protection: An Agent-Based Modeling Approach with High Spatial–Temporal Resolution Data, *Engineering*, 2024, 42: 295-307.
-2. Wen Wen, Yang Su, Ying-er Tang, Xingman Zhang, Yuchen Hu, Yawen Ben, Shen Qu. Evaluating carbon emissions reduction compliance based on 'dual control' policies of energy consumption and carbon emissions in China, *Journal of Environmental Management*, 2024, 367: 121990.
-3. Qianzi Wang, Qi Zhou, Jin Lin, Sen Guo, Yunlei She, Shen Qu. Risk assessment of power outages to inter-regional supply chain networks in China, *Applied Energy*, 2023, 353: 122100.
-4. Liping Wang, Zhouyi Liu, Yunlei She, Yiyi Cao, Mimi Gong, Meng Wang, Shen Qu. Exploring the network structure of virtual water trade among China's cities. *Journal of Environmental Management* 2025, 388, 125968.
-5. Yunlei She, Jiayang Chen, Qi Zhou, Liping Wang, Kai Duan, Ranran Wang, Shen Qu. Evaluating losses from water scarcity and benefits of water conservation measures to intercity supply chains in China，*Environmental science & technology*, 2024, 58(2): 1119-1130.
-6. Yiyi Cao, Yunlei She, Qianzi Wang, Jin Lin, Weiming Chen, Shen Qu, Zhouyi Liu. Redefining virtual water allocation in China based on economic welfare gains from environmental externalities, *Journal of Cleaner Production*, 2024, 434: 140243.
-7. Kun Zhang, Yiyi Cao, Zhouyi Liu, Qi Zhou, Shen Qu, Yi-Ming Wei. Allocation of carbon emission responsibility among Chinese cities guided by economic welfare gains: Case study based on multi-regional input-output analysis, *Applied Energy*,2024, 376: 124252.
-...
-
 
 
 # 3. Quick Start
@@ -159,8 +144,8 @@ CLUES ABM is a **Dynamic Complex Network Model** based on adaptive agents. It si
   1. Update environmental and policy constraints.
   2. Connect subjects and establish interactions.
   3. Execute core agent actions:
-     * **Production Agents:** Production $\rightarrow$ Product preparation $\rightarrow$ Order placement $\rightarrow$ Adaptation $\rightarrow$ Memory update
-     * **Consumption Agents:** Consumption $\rightarrow$ Order placement $\rightarrow$ Memory update
+     * **Production Agents:** Production → Product preparation → Order placement → Adaptation → Memory update
+     * **Consumption Agents:** Consumption → Order placement → Memory update
   4. Advance to the next time step (day).
 
 > **Note:** Understanding this underlying core architecture is essential for customizing the model configurations and properly setting up scenario impacts.
@@ -278,12 +263,18 @@ The specific behaviors and corresponding micro-foundations of the these agents i
 
 The production is based on the Leontief production function and is limited by the total order, production capacity, and raw material supply:
 
-```math
+$$
 X^{a} = \min\{O^{tot}, X^{cap}, \min\{X^{s'}\}, \min\{X^{r', s'}\}\} \quad (1)
-```
+$$
 
 
 $$
 X^{a} = \min\left\{O^{tot}, X^{cap}, \min\left\{X^{s'}\right\}, \min\left\{X^{r', s'}\right\}\right\}
 \tag{1}
+$$
+
+$$
+\begin{equation}
+X^{a} = \min \left\{ O^{tot}, X^{cap}, \min \left\{ X^{s^{\prime}} \right\}, \min \left\{ X^{r^{\prime}, s^{\prime}} \right\} \right\}
+\end{equation}
 $$
