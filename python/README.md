@@ -9,7 +9,7 @@ This subdirectory contains the high-performance Python implementation of the **C
 * **`clues_abm/`**: The standard Python module library.
   * `WorldOfMatrix_GPU4.py`: Core computational matrix model governing large-system agent communications.
 * **`data/`**: Input file repository.
-  * `MRIOExample.json`: Sample Multi-Regional Input-Output dataset formatted for tensor bootstrapping.
+  * `MRIOExample.npz`: Sample Multi-Regional Input-Output dataset formatted for tensor bootstrapping.
 * **`output/`**: Execution matrix cache.
   * `TestResults_ReductionInProductionCapacityExample.npz`: Multi-dimensional simulation state arrays.
 * **`demo.ipynb`**: **[Highly Recommended]** Textbook-style interactive notebook providing complete parameter sweeps and visual charting.
