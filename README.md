@@ -1,5 +1,4 @@
-# CLUES_ABM
-The CLUES model is an agent-based model for simulating the evolution of an input-output system which can either be monetary or physical, single- or multi-regional. The abbreviation “CLUES” stands for “Climate-resilient and Low-carbon Unfolding Economic Scenarios”# CLUES ABM Model
+# CLUES ABM Model
 
 # 1. Overview
 
@@ -871,4 +870,3 @@ connecting the production agent `⟨P⟩(r₁,s₁)` and the consumption agent
 
 
 
-, which implies the model can be used to model the supply chain impacts of adaptation and mitigation for global environmental change and the modeled scenarios can unfold at relatively fine temporal scales (such as days).
