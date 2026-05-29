@@ -1,12 +1,12 @@
-import json
 import numpy as np
 import matplotlib.pyplot as plt
 from clues_abm.WorldOfMatrix_GPU4 import WorldOfMatrixGPU
 
 # ======================= Load and initialize model =======================
 model = WorldOfMatrixGPU()
-with open("data/MRIOExample.json") as f:
-    MRIOdata = json.load(f)
+
+# Load baseline economic network topology
+MRIOdata = np.load("data/MRIOExample.npz")
 
 # Set simulation parameters
 delta_t = 1 / 365
