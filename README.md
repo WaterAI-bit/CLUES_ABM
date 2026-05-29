@@ -376,15 +376,15 @@ temporal scales (such as days).
 Given enough data and computing power, this agent-based model can be
 applied to any input-output system with many producers, consumers, and
 transporters. Below we assume, as in Multi-Regional Input-Output (MRIO)
-models, there are $r = 1, \dots, R$ regions and $s = 1, \dots, S$
+models, there are $`r = 1, \dots, R`$ regions and $`s = 1, \dots, S`$
 sectors in each region. Each region-sector is represented by a
-production agent `⟨P⟩(r,s)`. The final consumption in each region is
-represented by a consumption agent `⟨C⟩(r)`. The transportation agent
-from production agents `⟨P⟩(r₁,s₁)` to `⟨P⟩(r₂,s₂)` is
-`⟨T⟩^(→⟨P⟩)(r₁,s₁,r₂,s₂)`, shipping the relevant intermediate product,
-and the transportation agent from the production agent `⟨P⟩(r₁,s₁)` to
-the consumption agent `⟨C⟩(r₂)` is `⟨T⟩^(→⟨C⟩)(r₁,s₁,r₂)`, shipping the
-final product to consumers in region `r₂`.
+production agent $`\langle P \rangle (r, s)`$. The final consumption in each region is
+represented by a consumption agent $`\langle C \rangle (r)`$. The transportation agent
+from production agents $`\langle P \rangle (r_1, s_1)`$ to $`\langle P \rangle (r_2, s_2)`$ is
+$`\langle T \langle ^(\rightarrow \langle P \langle)(r_1,s_1,r_2,s_2)`$, shipping the relevant intermediate product,
+and the transportation agent from the production agent $`\langle P \rangle (r_1,s_1)`$ to
+the consumption agent $`\langle C \langle(r_2)`$ is $` \langle T \langle ^(\rightarrow \langle C \langle)(r_1,s_1,r_2)`$, shipping the
+final product to consumers in region $`r_2`$.
 
 The specific behaviors and corresponding micro-foundations of the these
 agents including production agents, consumption agents, and
@@ -824,14 +824,14 @@ $$
 $$
 
 where
-$Z_{t}^{\rightarrow \langle C \rangle}(r_2 \mid \langle P \rangle(r_1,s_1))$
+$`Z_{t}^{\rightarrow \langle C \rangle}(r_2 \mid \langle P \rangle(r_1,s_1))`$
 represents the cargo produced by production agent `⟨P⟩(r₁,s₁)` and
 planned to be delivered to consumption agent `⟨C⟩(r₂)` in $t$.
 
 #### 3) Blockage (Optional, not in this study)
 
 If this transportation agent $`⟨T⟩^{\rightarrow \langle C \rangle}(r_1,s_1,r_2)`$ has $b$ units of
-goods $`s_1`$ blocked at step $`l$ ($l=1, 2, \ldots, L`$), then unit $b$ of
+goods $`s_1`$ blocked at step `l$ ($l=1, 2, \ldots, L`), then unit $b$ of
 goods $`s_1`$ on step $l$ cannot be transported forward. If $b>0$, the
 transportation chain is blocked; if $b=0$, the transportation chain is
 not blocked. Similar to the previous case, the relevant production flows
@@ -848,7 +848,7 @@ $$
 #### 4) Unloading
 
 The cargo on the last step $L+1$ of the transportation chain is unloaded
-to the target consumption agent `⟨C⟩(r₂)` in simulation period $t$:
+to the target consumption agent $`⟨C⟩(r_2)`$ in simulation period $t$:
 
 $$
 Z_{t}^{\leftarrow \langle P \rangle}( r_{1}, s_{1} \mid \langle C \rangle( r_{2} ) ) = \widetilde{\widetilde{Z}}_{L+1,t+1} \quad (30)
@@ -865,8 +865,8 @@ Z_{t+1}( \cdot \mid \langle T \rangle^{\rightarrow \langle C \rangle}( r_{1}, s_
 $$
 
 Therefore, we have completed updating the transportation chain
-connecting the production agent `⟨P⟩(r₁,s₁)` and the consumption agent
-`⟨C⟩(r₂)`.
+connecting the production agent $`⟨P⟩(r_1,s_1)`$ and the consumption agent
+$`⟨C⟩(r_2)`$.
 
 
 
