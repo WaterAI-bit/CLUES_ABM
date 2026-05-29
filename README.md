@@ -31,8 +31,6 @@ network.
 
 </p>
 
-**To be supplemented: 1 link points to the second library**
-
 # 2. Function Introduction
 
 ## 2.1 Core Capabilities
@@ -71,7 +69,22 @@ governmental decision-making and corporate strategic analysis, and
 provides support for enhancing the adaptability and sustainability of
 China's socio-economic systems in the face of environmental change.
 
-## 2.3 Selected Publications
+## 2.3 Applications & Scenario Templates
+
+To maintain a lightweight and efficient core computational engine, comprehensive empirical case studies and large-scale simulation playbooks are maintained in our companion repository: **[CLUES_ABM_Applications](替换为你的实际应用库链接)**. 
+
+We provide three standardized operational templates to guide user-defined policy evaluations and multi-hazard resilience benchmarking. These templates dynamically adjust their internal indexing topology based on the spatial dimension (`model.MRIO_R`) and sector scaling (`model.MRIO_S`) configured in the core engine.
+
+| Template & Architecture | Core Mechanism | Empirical Application Scenarios |
+| :--- | :--- | :--- |
+| **Template 1: Reduction in Production Capacity** | Simulates the high-frequency temporal degradation of capacity constraints ($\theta$) across highly targeted region-sector agent clusters. | Assessing localized environmental regulations, industrial relocation shocks, and regional economic output contractions. |
+| **Template 2: Resource Constraints** | Analyzes the cascading systemic feedback loops triggered by an abrupt supply squeeze of critical resource inputs or raw materials. | Quantifying resource scarcity risks (e.g., water/energy dual-control), critical metal de-risking, and international trade border restrictions (e.g., CBAM policies). |
+| **Template 3: Transportation Line Blockage** | Simulates micro-level logistics latency, freight distribution delays, and bottleneck congestion across augmented infrastructure layers. | Evaluating physical infrastructure vulnerability, sub-national logistics chain disruptions, and supply chain topological friction. |
+
+👉 **[Explore Full Workflows in CLUES_ABM_Applications ➔](替换为你的实际应用库链接)**
+
+
+## 2.4 Selected Publications
 
 Below is a curated list of research articles demonstrating the
 validation, application, and methodology of the CLUES-ABM framework in

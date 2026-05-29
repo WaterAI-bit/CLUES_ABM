@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from clues_abm.WorldOfMatrix_GPU4 import WorldOfMatrixGPU
+from clues_abm.WorldOfMatrix_GPU import WorldOfMatrixGPU
 
 # ======================= Load and initialize model =======================
 model = WorldOfMatrixGPU()
