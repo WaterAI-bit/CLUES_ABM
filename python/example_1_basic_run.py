@@ -54,15 +54,20 @@ S0_Evolution_Scarcity_RegionsProducts = np.zeros((model.MRIO_R, model.Sa, day_to
 # ======================= Run simulation =======================
 for day in range(1,day_total+1):
     print(day)
-    # Example shock: production loss for first month
+    # --- MULTI-REGIONAL SPATIOTEMPORAL SHOCKS (model.MRIO_R Regions × model.MRIO_S Sectors, for example 44 Regions × 56 Sectors in this demo) --- 
+    # Index Rule: model.MRIO_S*(R-1) + (S-1), for example 56*(R-1) + (S-1) in this demo
+    
+    # Days 1–30: Region 1, Sectors 1–20 experience a 20% regulatory capacity shock (theta = 0.2)
     if 1 <= day <= 30:
         ind = np.arange(0, 20)
         model.AgentsP_Theta[ind] = 0.2
+    # Days 100–130: Region 2, Sectors 21–40 experience a 30% regulatory capacity shock (theta = 0.3)
     if 100 <= day <= 130:
-        ind = np.arange(49, 56)
+        ind = np.arange(76, 96)
         model.AgentsP_Theta[ind] = 0.3
+    # Days 200–230: Region 5, Sectors 49–56 experience a 40% regulatory capacity shock (theta = 0.4)
     if 200 <= day <= 230:
-        ind = np.arange(29, 46)
+        ind = np.arange(272, 280)
         model.AgentsP_Theta[ind] = 0.4
 
 
