@@ -11,10 +11,16 @@ Figure 1 illustrates the simulation process of the CLUES-ABM model. Within a pre
 
 ![CLUES-ABM model schematic diagram](https://github.com/WaterAI-bit/CLUES_ABM/raw/main/figures/clues_abm_flow.png)
 
+
+<p align="center">
+  <img src="https://github.com/WaterAI-bit/CLUES_ABM/raw/main/figures/clues_abm_flow.png" alt="CLUES-ABM model schematic diagram" width="60%">
+</p>
+
+
 **To be supplemented: 1 link points to the second library**
 
 # 2. Function Introduction
-The platform constructs an economic system model based on the interacting adaptive subjects in the industrial network. Through the integration of multi-source data, subject behavior rules and parallel computing technology，The platform is able to simulate the diffusion process of environmental risks, natural disasters, policy adjustments and other sudden events** in the economic system at a **high spatial and temporal resolution**, and to identify risk nodes and key transmission paths. Compared with traditional models, the platform can better reflect the real adaptive behavior and complexity characteristics of economic agents, thus providing a scientific basis for policy formulation.
+The platform constructs an economic system model based on the interacting adaptive subjects in the industrial network. Through the integration of multi-source data, subject behavior rules and parallel computing technology，The platform is able to simulate the diffusion process of environmental risks, natural disasters, policy adjustments and other sudden events in the economic system at a **high spatial and temporal resolution**, and to identify risk nodes and key transmission paths. Compared with traditional models, the platform can better reflect the real adaptive behavior and complexity characteristics of economic agents, thus providing a scientific basis for policy formulation.
 
 
 **Application**:
@@ -47,37 +53,20 @@ The platform can be used as an important tool for scientific research, governmen
 
 ...
 
-# 3. Quick Start
-## 3.1 Environmental Preparation
-  •	  Python ≥ 3.9 (Recommend 3.9–3.11)
-  •	  Recommended for virtual environments（```conda```or ```venv```）
-
-The code is as follows：
-
-```c
-# Create a virtual environment (either one)
-conda create -n clues-abm python=3.10 -y && conda activate clues-abm
-# Or
-python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
-```
-
-Install Dependencies:
-```c
-pip install solara numpy matplotlib
-#If the repository has requirements.txt：
-pip install -r requirements.txt
-```
-
 
 
 # 3. Quick Start
 
 ## 3.1 Environmental Preparation
 
-* Python ≥ 3.9 (Recommend 3.9–3.11)
-* Recommended for virtual environments ( `conda` or `venv` )
+You can choose either the **Python version** or the **MATLAB version** depending on your preference.
 
-The code is as follows:
+### 3.1.1 Python Version
+
+* **Requirements:** Python ≥ 3.9 (Recommend 3.9–3.11)
+* **Environment:** Recommended to use virtual environments (`conda` or `venv`)
+
+The commands are as follows:
 
 ```bash
 # Create a virtual environment (either one)
@@ -94,6 +83,29 @@ pip install solara numpy matplotlib
 pip install -r requirements.txt
 ```
 
+### 3.1.2 MATLAB Version
+
+* **Requirements:** MATLAB R2022a or later (Recommended)
+* **Required Toolboxes:** 
+  * `Parallel Computing Toolbox` (for parallel acceleration)
+  * `Optimization Toolbox` (optional, depending on scenario settings)
+
+**Setup Instructions:**
+
+1. Launch MATLAB and change the current folder to the project root directory `CLUES_ABM/`.
+2. Verify that all required toolboxes are properly installed and activated.
+3. *(Optional)* Run the following command in the MATLAB Command Window to check your environment and verify the setup:
+
+```matlab
+% Run this in the MATLAB Command Window to check installed toolboxes
+ver
+```
+
+
+
+
+
+
 
 
 
@@ -101,12 +113,16 @@ pip install -r requirements.txt
 
 
 ## 3.2 Get Code
-The code is as follows：
-```c
+
+The code is as follows:
+
+```bash
 git clone https://github.com/WaterAI-bit/CLUES_ABM.git
 cd CLUES_ABM
 ```
+
 ## 3.3 Model Background & Core Architecture
+
 CLUES ABM is a **Dynamic Complex Network Model** based on adaptive agents that simulates the evolution of multiregional economic systems under external shocks, and is particularly suitable for assessing supply chain impacts of climate change adaptation and mitigation.
 
  - **Behavioral  network data**<br>
@@ -125,6 +141,7 @@ CLUES ABM is a **Dynamic Complex Network Model** based on adaptive agents that s
 &emsp; &emsp; Trade Adaptation<br>
 &emsp; &emsp; Production Adaptation<br>
 &emsp; &emsp; Reconstruction<br>
+
  - **Program structure**<br>
 &emsp; &emsp; object-oriented programming（OOP）<br>
 &emsp; &emsp; core category：<br>
@@ -132,6 +149,7 @@ CLUES ABM is a **Dynamic Complex Network Model** based on adaptive agents that s
 &emsp; &emsp; &emsp; &emsp;	AgentProduction<br>
 &emsp; &emsp; &emsp; &emsp;	AgentConsumption<br>
 &emsp; &emsp; &emsp; &emsp;	AgentTransportation<br>
+
  - **Simulation cycle** (for example, 365 days a year)：<br>
 &emsp; &emsp;Renewal of environmental and policy constraints<br>
 &emsp; &emsp;Connecting subjects (establishing interactions)<br>
@@ -143,27 +161,30 @@ CLUES ABM is a **Dynamic Complex Network Model** based on adaptive agents that s
 Understanding this structure helps to customize the configuration with scenario impact
 
 ## 3.4 Interactive operation
+
 Run it in the project root directory:
-```c
+
+```bash
 solara run app.py
 ```
 The browser opens an interactive interface that supports a visual view of the simulation.
 
 ## 3.5 Script Running
+
 Run in the project root directory：
-```c
+```bash
 # Note the space in the filename
 python "example 1 basic run.py"
 ```
 Script flow:
-<br>
-(1) Load the data (e.g. ``cMRIOExample.json``)<br>
-(2) Set simulation parameters (time step ```delta_t```, total days ```day_total```, target days ```ndays_target_default```)<br>
-(3) Initialize subjects (production, consumption, transport)<br>
-(4) Injecting scenario shocks (modifying ```AgentsP_Theta```to simulate capacity declines)<br>
-(5) Advancing through the cycle (flow of goods → subject decisions → memory update)<br>
-(6) Record results (value added changes, network flows, scarcity, etc.)<br>
-(7) Plotting/saving (line graphs + ``.npz`` result files)<br>
+
+(1) Load the data (e.g. ```cMRIOExample.json```)
+(2) Set simulation parameters (time step ```delta_t```, total days ```day_total```, target days ```ndays_target_default```)
+(3) Initialize subjects (production, consumption, transport)
+(4) Injecting scenario shocks (modifying ```AgentsP_Theta```to simulate capacity declines)
+(5) Advancing through the cycle (flow of goods → subject decisions → memory update)
+(6) Record results (value added changes, network flows, scarcity, etc.)
+(7) Plotting/saving (line graphs + ```.npz``` result files)
 
 
 
@@ -179,9 +200,9 @@ The browser will open an interactive interface that supports visual viewing of t
   • 	```MRIOExample.json```：Multi-regional input-output data（```MRIO_R```、```MRIO_S```、```MRIO_Z```、```MRIO_C```、```MRIO_VA```etc.）<br>
    •	Simulation step and duration： ```delta_t = 1/365```，```day_total = 365```，```ndays_target_default = 3```<br>
    •	Impact settings (modified directly within the example script)： <br>
-   •	Setting ``AgentsP_Theta`` for some production agents in a specified number of day intervals to simulate a drop in capacity<br>
+   •	Setting ```AgentsP_Theta``` for some production agents in a specified number of day intervals to simulate a drop in capacity<br>
    •	Transportation chain length/mapping:<br>
-   •	Control of cargo flow propulsion and unloading positions through ``AgentsT_*`` with index ``k_NetPP / k_NetPC``.<br>
+   •	Control of cargo flow propulsion and unloading positions through ```AgentsT_*``` with index ```k_NetPP / k_NetPC```.<br>
    •	Main output variables:<br>
 &emsp; &emsp;Change in value added at regional/agent level<br>
 &emsp; &emsp;Changes in cross-regional product flows<br>
@@ -191,7 +212,7 @@ The browser will open an interactive interface that supports visual viewing of t
 ## 3.7 Results Visualization
 
    - Interactive mode: browser visualization<br>
-   - Scripting mode: terminal output + pop-up charts + optional ``.npz`` data file<br>
+   - Scripting mode: terminal output + pop-up charts + optional ```.npz``` data file<br>
    
 
 
@@ -255,12 +276,3 @@ The production is based on the Leontief production function and is limited by th
 $$
 X^{a} = \min\{O^{tot}, X^{cap}, \min\{X^{s'}\}, \min\{X^{r', s'}\}\} \quad (1)
 $$
-
-$$
-X^{a} = \min \left\{ O^{tot}, X^{cap}, \min \left\{ X^{s^{\prime}} \right\}, \min \left\{ X^{r^{\prime}, s^{\prime}} \right\} \right\} \quad (1)
-$$
-
-
-```math
-X^{a} = \min \left\{ O^{tot}, X^{cap}, \min \left\{ X^{s^{\prime}} \right\}, \min \left\{ X^{r^{\prime}, s^{\prime}} \right\} \right\} \quad (1)
-```
