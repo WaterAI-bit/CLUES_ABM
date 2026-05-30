@@ -2,18 +2,17 @@
 
 # 1. Overview
 
-The CLUES ABM model (Climate-resilient & Low-carbon Unfolding Economic
-Scenarios -- An Agent-Based Model) simulates the short-term impact of
-abrupt external shocks on an equilibrium economic--environmental system,
-containing the process of adaptation and mitigation of agents within the
-system. The model unfolds economic and environmental system changes over
-time, allowing high-temporal and spatial resolution simulations for
-short and medium-term periods. It couples global environmental changes
-with China's socio-economic system at a high spatial-temporal precision,
-simulating the diffusion of environmental risks, natural disasters, and
-policy changes. This model helps to assess economic and environmental
-impacts more accurately, identify risk nodes, and design adaptive
-policies.
+**CLUES-ABM** is an advanced computational framework **originally developed by the research team led by Prof. Shen Qu at the Beijing Institute of Technology**. 
+
+The model simulates the short-term impact of abrupt external shocks on an equilibrium economic-environmental system, capturing the endogenous adaptation and mitigation behaviors of heterogeneous agents over time.
+
+### Core Capabilities
+* **High-Resolution Simulation**: Unfolds spatial-temporal changes dynamically, allowing high-precision simulations for short and medium-term periods.
+* **Socio-Economic Coupling**: Seamlessly bridges global environmental shifts with China's socio-economic system at a refined subnational resolution.
+* **Policy & Risk Analysis**: Tracks the structural diffusion of environmental risks, natural disasters, and policy interventions to identify system-critical risk nodes and design adaptive policies.
+
+---
+
 
 Figure 1 illustrates the simulation process of the CLUES-ABM model.
 Within a predefined world (such as China or globally), based on the
