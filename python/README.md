@@ -13,7 +13,7 @@ This subdirectory contains the high-performance Python implementation of the **C
 * **`output/`**: Execution matrix cache.
   * `TestResults_ReductionInProductionCapacityExample.npz`: Multi-dimensional simulation state arrays.
 * **`demo.ipynb`**: **[Highly Recommended]** Textbook-style interactive notebook providing complete parameter sweeps and visual charting.
-* **`example_1_basic_run.py`**: A lightweight, headless batch-processing Python script optimized for server side deployments.
+* **`example_0_basic_run.py`**: A lightweight, headless batch-processing Python script optimized for server side deployments.
 
 ---
 

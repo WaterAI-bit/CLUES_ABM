@@ -12,7 +12,7 @@ This subdirectory contains the high-performance Matlab implementation of the **C
   * `MRIOExample.mat`: Sample Multi-Regional Input-Output dataset formatted for tensor bootstrapping.
 * **`output/`**: Execution matrix cache.
   * `TestResults_ReductionInProductionCapacityExample0.mat`: Multi-dimensional simulation state arrays.
-* **`example_1_basic_run.m`**: A lightweight, headless batch-processing Matlab script optimized for server side deployments.
+* **`example_0_basic_run.m`**: A lightweight, headless batch-processing Matlab script optimized for server side deployments.
 
 ---
 
