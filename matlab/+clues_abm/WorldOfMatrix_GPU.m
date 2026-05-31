@@ -113,7 +113,7 @@ classdef WorldOfMatrix_GPU < handle
         AgentsP_Xs % N_P*Sa: Possible production levels constrained by inventories of different products.
         AgentsP_Xa % N_P*1: Actual production.
         AgentsP_VA % N_P*1: Actual value added.
-        AgentsP_WaterIntensity % N_P*1: Water required for unitary output of each production agent.
+        AgentsP_ResourceIntensity % N_P*1: Resource required for unitary output of each production agent.
         % Product Outflows: Each row represents an product sender, each column a product receiver.
         AgentsP_ProductOutP % N_P*N_P: Product sent toward different production agents (through transportation agents).
         AgentsP_ProductOutC % N_P*N_C: Product sent toward different consumption agents (through transportation agents).
@@ -207,12 +207,12 @@ classdef WorldOfMatrix_GPU < handle
     end
     properties % MRIO variables (which could be initialized automatically)
         % Resource constraints IN EACH SIMULATION PERIOD, may or maynot needed to be provided externally.
-        WaterConstraints % MRIO_R*1 vector: Water constraints for each region in MRIO table.
+        ResourceConstraints % MRIO_R*1 vector: Resource constraints for each region in MRIO table.
 
         % Conversion matrices for MRIO computations
         Regions_Matrix % MRIO_R*N_P matrix that converts rows of region-sectors to rows of regions
-        Regions_Matrix_WaterIntensity % MRIO_R*N_P matrix 
-        ... where each row contains the water intensities of the sectors in the corresponding region.
+        Regions_Matrix_ResourceIntensity % MRIO_R*N_P matrix 
+        ... where each row contains the resource intensities of the sectors in the corresponding region.
     end
     methods % Methods for initialization using data from Multi-Regional Input-Output Tables.
         function obj = InitializeBasicVariables_UsingMRIO(obj) % Initialize Basic variables of the world.
@@ -259,8 +259,8 @@ classdef WorldOfMatrix_GPU < handle
             
             % MRIO_R*N_P matrix that converts rows of region-sectors to rows of regions.
             obj.Regions_Matrix = kron(eye(obj.N_P/obj.S,obj.N_P/obj.S),ones(1,obj.S));
-            % MRIO_R*N_P matrix where each row contains the water intensities of the sectors in the corresponding region.
-            obj.Regions_Matrix_WaterIntensity = obj.Regions_Matrix .* obj.AgentsP_WaterIntensity';
+            % MRIO_R*N_P matrix where each row contains the resource intensities of the sectors in the corresponding region.
+            obj.Regions_Matrix_ResourceIntensity = obj.Regions_Matrix .* obj.AgentsP_ResourceIntensity';
 
             % Number of aggregated products.
             obj.Sa = size(obj.S2Sa,2);
@@ -366,7 +366,7 @@ classdef WorldOfMatrix_GPU < handle
             obj.AgentsP_PP2_OrderOutSa = obj.AgentsP_OrderOutSa;
 
             % Initiate resource constraints. Higher than normal use.
-            obj.WaterConstraints = obj.Regions_Matrix_WaterIntensity * obj.AgentsP_SS_Xcap + eps;
+            obj.ResourceConstraints = obj.Regions_Matrix_ResourceIntensity * obj.AgentsP_SS_Xcap + eps;
         end
         function obj = InitializeConsumptionAgents_UsingMRIO(obj) % Initialize consumption agents.
             % Product inflows: Each row represents a consumer agent.
@@ -501,7 +501,7 @@ classdef WorldOfMatrix_GPU < handle
             lb(obj.AgentsP_SS_Xcap>0) = obj.AgentsP_SS_Xcap(obj.AgentsP_SS_Xcap>0) * 1e-2;
             % Update actual production levels using linear optimazation.    
             obj.AgentsP_Xa = ... 
-                linprog(-ones(obj.N_P,1),obj.Regions_Matrix_WaterIntensity,obj.WaterConstraints,[],[],lb,ub);
+                linprog(-ones(obj.N_P,1),obj.Regions_Matrix_ResourceIntensity,obj.ResourceConstraints,[],[],lb,ub);
             % Update value added.
             obj.AgentsP_VA = obj.AgentsP_Xa .* obj.AgentsP_va;
            

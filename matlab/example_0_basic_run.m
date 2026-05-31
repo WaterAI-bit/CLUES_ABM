@@ -52,8 +52,8 @@ GlobalEcon.delta_t = delta_t;
 GlobalEcon.ndays_Target_Default = ndays_Target_Default;
 % Distance (i.e., steps in the transportation line) between regions.
 GlobalEcon.MRIO_Dist = MRIO_Dist;
-% Water required for unitary output of each production agent.
-GlobalEcon.AgentsP_WaterIntensity = AgentsP_WaterIntensity;
+% Resource required for unitary output of each production agent.
+GlobalEcon.AgentsP_ResourceIntensity = AgentsP_WaterIntensity;
 % A conversion matrix, each row is a product and each column is an aggregate product. 
 % The value is 1 if the column is aggregate product for the row product, otherwise is 0.
 GlobalEcon.S2Sa = S2Sa; % Use the imported conversion matrix.
